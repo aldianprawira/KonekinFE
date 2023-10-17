@@ -10,10 +10,6 @@ class IntroductionView extends GetView<IntroductionController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('IntroductionView'),
-        centerTitle: true,
-      ),
       body: Center(
         child: ElevatedButton(
           onPressed: () => Get.toNamed(Routes.REGISTER),
