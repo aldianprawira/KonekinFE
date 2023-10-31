@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:konekin/app/shared/theme/color.dart';
+import 'package:konekin/app/shared/widget/LogoKonekinOutlined.dart';
 
 import '../../../routes/app_pages.dart';
 import '../controllers/login_controller.dart';
@@ -14,13 +15,7 @@ class LoginView extends GetView<LoginController> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text(
-          'Welcome Back!',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
+        title: const LogoKonekinOutlined(),
       ),
       body: Form(
         key: controller.formKey,
@@ -30,6 +25,15 @@ class LoginView extends GetView<LoginController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 20),
+              const Text(
+                'Login Account',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(height: 8),
               Text(
                 "You've been missed, please enter your email and your password.",
                 style: TextStyle(
@@ -37,7 +41,7 @@ class LoginView extends GetView<LoginController> {
                   fontSize: 18,
                 ),
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 40),
               const Text("Email", style: TextStyle(fontSize: 16)),
               const SizedBox(height: 4),
               TextFormField(
@@ -85,7 +89,7 @@ class LoginView extends GetView<LoginController> {
                 child: TextButton(
                   onPressed: () => Get.toNamed(Routes.RESET_PASSWORD),
                   child: Text(
-                    "Forgot Password?",
+                    "Forgot password?",
                     style: TextStyle(
                       color: primary,
                       decoration: TextDecoration.underline,
@@ -131,8 +135,11 @@ class LoginView extends GetView<LoginController> {
                   TextButton(
                     onPressed: () => Get.back(),
                     child: Text(
-                      "Register now",
-                      style: TextStyle(color: primary),
+                      "Register here",
+                      style: TextStyle(
+                        color: primary,
+                        decoration: TextDecoration.underline,
+                      ),
                     ),
                   ),
                 ],

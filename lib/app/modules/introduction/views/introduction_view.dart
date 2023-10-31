@@ -33,7 +33,7 @@ class IntroductionView extends GetView<IntroductionController> {
                   children: [
                     const SizedBox(height: 160),
                     Text(
-                      "Chat With Awesome Creators",
+                      "Chat with Awesome Creators!",
                       style: TextStyle(
                         color: primary,
                         fontSize: 28,
@@ -44,7 +44,7 @@ class IntroductionView extends GetView<IntroductionController> {
                     SizedBox(
                       width: Get.width * 0.8,
                       child: Text(
-                        "Meet a great creators from various profession? Only here is the place.",
+                        "Meet a great creators from various profession? Only here is the place",
                         style: TextStyle(
                           color: grey,
                           fontSize: 16,
@@ -106,7 +106,7 @@ class IntroductionView extends GetView<IntroductionController> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 160),
+                    const SizedBox(height: 180),
                     Text(
                       "Anytime Anywhere!",
                       style: TextStyle(
@@ -119,7 +119,7 @@ class IntroductionView extends GetView<IntroductionController> {
                     SizedBox(
                       width: Get.width * 0.8,
                       child: Text(
-                        "Are you statisfied just hearing the sound? like podcast? if you chat here, you can see each other!",
+                        "Are you statisfied just hearing the sound? If you chat here, you can see each other!",
                         style: TextStyle(
                           color: grey,
                           fontSize: 16,
@@ -133,7 +133,7 @@ class IntroductionView extends GetView<IntroductionController> {
           ),
           Column(
             children: [
-              const SizedBox(height: 140),
+              const SizedBox(height: 160),
               Center(
                 child: Image.asset(
                   "assets/images/intro2.png",
@@ -191,12 +191,13 @@ class IntroductionView extends GetView<IntroductionController> {
                     onTap: () => controller.CarouselC.animateToPage(entry.key),
                     child: Obx(
                       () => Container(
-                        width: 24,
-                        height: 6,
+                        width: 40,
+                        height: 8,
                         margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
                         decoration: BoxDecoration(
-                          shape: controller.current.value == entry.key ? BoxShape.rectangle : BoxShape.circle,
-                          color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : primary).withOpacity(controller.current.value == entry.key ? 0.9 : 0.4),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(8),
+                          color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : primary).withOpacity(controller.current.value == entry.key ? 0.9 : 0.1),
                         ),
                       ),
                     ),

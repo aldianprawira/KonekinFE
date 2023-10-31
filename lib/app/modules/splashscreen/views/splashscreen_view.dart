@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:konekin/app/routes/app_pages.dart';
-import 'package:konekin/app/shared/widget/logo.dart';
+import 'package:konekin/app/shared/widget/LogoKonekin.dart';
 
 import '../controllers/splashscreen_controller.dart';
 
