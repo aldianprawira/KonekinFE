@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:konekin/app/routes/app_pages.dart';
 import 'package:konekin/app/shared/theme/color.dart';
-import 'package:konekin/app/shared/widget/LogoKonekinOutlined.dart';
-import 'package:konekin/app/shared/widget/PrimaryCard.dart';
-import 'package:konekin/app/shared/widget/RecommendationCard.dart';
+import 'package:konekin/app/shared/widget/logo_konekin_outlined.dart';
+import 'package:konekin/app/shared/widget/primary_card.dart';
+import 'package:konekin/app/shared/widget/recommendation_card.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -16,14 +17,14 @@ class HomeView extends GetView<HomeController> {
         title: const LogoKonekinOutlined(),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20),
+        padding: const EdgeInsets.only(left: 16),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 16),
               const Text(
-                "Recommendations",
+                "Recommended for you",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -41,6 +42,16 @@ class HomeView extends GetView<HomeController> {
                       creator: "Oz Chen",
                       price: "Rp149.000,00",
                       bestSeller: true,
+                      onTap: () => Get.toNamed(
+                        Routes.DETAIL_VIDEO,
+                        arguments: {
+                          "image": "assets/images/ux.jpg",
+                          "title": "The Ultimate UX Portfolio Course",
+                          "bestSeller": true,
+                          "creator": "Oz Chen",
+                          "price": "Rp149.000,00",
+                        },
+                      ),
                     ),
                     RecommendationCard(
                       image: "assets/images/report.jpg",
@@ -48,6 +59,16 @@ class HomeView extends GetView<HomeController> {
                       creator: "Michael Taylor",
                       price: "Rp149.000,00",
                       bestSeller: true,
+                      onTap: () => Get.toNamed(
+                        Routes.DETAIL_VIDEO,
+                        arguments: {
+                          "image": "assets/images/report.jpg",
+                          "title": "Crystal Reports for SAP Business One Mastery Training Course",
+                          "bestSeller": true,
+                          "creator": "Michael Taylor",
+                          "price": "Rp149.000,00",
+                        },
+                      ),
                     ),
                     RecommendationCard(
                       image: "assets/images/blender.jpg",
@@ -113,6 +134,16 @@ class HomeView extends GetView<HomeController> {
                       creator: "Andre LaMothe",
                       price: "Rp149.000,00",
                       bestSeller: true,
+                      onTap: () => Get.toNamed(
+                        Routes.DETAIL_VIDEO,
+                        arguments: {
+                          "image": "assets/images/pcb.jpg",
+                          "title": "Crash Course Electronics and PCB Design",
+                          "bestSeller": true,
+                          "creator": "Andre LaMothe",
+                          "price": "Rp149.000,00",
+                        },
+                      ),
                     ),
                     PrimaryCard(
                       image: "assets/images/blender.jpg",
@@ -120,6 +151,16 @@ class HomeView extends GetView<HomeController> {
                       creator: "GameDev.tv Team, Rick Davidson, Grant Abbitt",
                       price: "Rp159.000,00",
                       bestSeller: true,
+                      onTap: () => Get.toNamed(
+                        Routes.DETAIL_VIDEO,
+                        arguments: {
+                          "image": "assets/images/blender.jpg",
+                          "title": "Complete Blender Creator: Learn 3D Modelling for Beginners",
+                          "bestSeller": true,
+                          "creator": "GameDev.tv Team, Rick Davidson, Grant Abbitt",
+                          "price": "Rp159.000,00",
+                        },
+                      ),
                     ),
                     PrimaryCard(
                       image: "assets/images/photoshop.jpg",

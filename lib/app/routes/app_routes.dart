@@ -9,6 +9,11 @@ abstract class Routes {
   static const REGISTER = _Paths.REGISTER;
   static const LOGIN = _Paths.LOGIN;
   static const RESET_PASSWORD = _Paths.RESET_PASSWORD;
+  static const NAVBAR = _Paths.NAVBAR;
+  static const FORUM = _Paths.FORUM;
+  static const PROFILE = _Paths.PROFILE;
+  static const DETAIL_VIDEO = _Paths.DETAIL_VIDEO;
+  static const HOME_CREATOR = _Paths.HOME_CREATOR;
 }
 
 abstract class _Paths {
@@ -19,4 +24,9 @@ abstract class _Paths {
   static const REGISTER = '/register';
   static const LOGIN = '/login';
   static const RESET_PASSWORD = '/reset-password';
+  static const NAVBAR = '/navbar';
+  static const FORUM = '/forum';
+  static const PROFILE = '/profile';
+  static const DETAIL_VIDEO = '/detail-video';
+  static const HOME_CREATOR = '/home-creator';
 }

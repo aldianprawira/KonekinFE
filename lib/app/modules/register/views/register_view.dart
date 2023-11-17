@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:konekin/app/routes/app_pages.dart';
 import 'package:konekin/app/shared/theme/color.dart';
-import 'package:konekin/app/shared/widget/LogoKonekin.dart';
-import 'package:konekin/app/shared/widget/LogoKonekinOutlined.dart';
+import 'package:konekin/app/shared/widget/logo_konekin_outlined.dart';
 
 import '../controllers/register_controller.dart';
 
@@ -134,11 +133,15 @@ class RegisterView extends GetView<RegisterController> {
                             const SnackBar(content: Text('Processing Data')),
                           );
                           Timer.periodic(const Duration(seconds: 2), (timer) {
-                            Get.offAllNamed(Routes.HOME);
+                            Get.offAllNamed(Routes.NAVBAR);
                             timer.cancel();
                           });
                         }
                       },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                      ),
                       child: const Text(
                         "Register",
                         style: TextStyle(

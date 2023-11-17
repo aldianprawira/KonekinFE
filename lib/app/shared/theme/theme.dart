@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:konekin/app/shared/theme/color.dart';
 
 ThemeData theme = ThemeData(
@@ -32,10 +31,6 @@ ThemeData theme = ThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: primary,
       foregroundColor: white,
-      padding: const EdgeInsets.symmetric(vertical: 16),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
     ),
   ),
 );
