@@ -14,6 +14,8 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const DETAIL_VIDEO = _Paths.DETAIL_VIDEO;
   static const HOME_CREATOR = _Paths.HOME_CREATOR;
+  static const NAVBAR_CREATOR = _Paths.NAVBAR_CREATOR;
+  static const PROFILE_CREATOR = _Paths.PROFILE_CREATOR;
 }
 
 abstract class _Paths {
@@ -29,4 +31,6 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const DETAIL_VIDEO = '/detail-video';
   static const HOME_CREATOR = '/home-creator';
+  static const NAVBAR_CREATOR = '/navbar-creator';
+  static const PROFILE_CREATOR = '/profile-creator';
 }

@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/navbar_controller.dart';
+import '../controllers/navbar_creator_controller.dart';
 
-class NavbarView extends GetView<NavbarController> {
-  const NavbarView({Key? key}) : super(key: key);
+class NavbarCreatorView extends GetView<NavbarCreatorController> {
+  const NavbarCreatorView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // Get.put(HomeController());
-    // Get.put(ForumController());
-    return GetBuilder<NavbarController>(
+    return GetBuilder<NavbarCreatorController>(
       builder: (controller) => Scaffold(
         body: controller.page[controller.index],
         bottomNavigationBar: BottomNavigationBar(

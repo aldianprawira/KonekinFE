@@ -5,10 +5,10 @@ import 'package:konekin/app/routes/app_pages.dart';
 import 'package:konekin/app/shared/theme/color.dart';
 import 'package:konekin/app/shared/widget/profile_card.dart';
 
-import '../controllers/profile_controller.dart';
+import '../controllers/profile_creator_controller.dart';
 
-class ProfileView extends GetView<ProfileController> {
-  const ProfileView({Key? key}) : super(key: key);
+class ProfileCreatorView extends GetView<ProfileCreatorController> {
+  const ProfileCreatorView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,9 +79,9 @@ class ProfileView extends GetView<ProfileController> {
                       icon: Icon(Icons.key, color: primary),
                     ),
                     ProfileCard(
-                      title: "Switch to Creator",
+                      title: "Switch to Audience",
                       icon: Icon(Icons.change_circle, color: primary),
-                      onTap: () => Get.offAllNamed(Routes.NAVBAR_CREATOR),
+                      onTap: () => Get.offAllNamed(Routes.NAVBAR),
                     ),
                     ProfileCard(
                       title: "Help",

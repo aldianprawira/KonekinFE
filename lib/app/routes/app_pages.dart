@@ -14,8 +14,12 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/navbar/bindings/navbar_binding.dart';
 import '../modules/navbar/views/navbar_view.dart';
+import '../modules/navbar_creator/bindings/navbar_creator_binding.dart';
+import '../modules/navbar_creator/views/navbar_creator_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/profile_creator/bindings/profile_creator_binding.dart';
+import '../modules/profile_creator/views/profile_creator_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/reset_password/bindings/reset_password_binding.dart';
@@ -28,7 +32,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.NAVBAR;
+  static const INITIAL = Routes.INTRODUCTION;
 
   static final routes = [
     GetPage(
@@ -85,6 +89,16 @@ class AppPages {
       name: _Paths.HOME_CREATOR,
       page: () => const HomeCreatorView(),
       binding: HomeCreatorBinding(),
+    ),
+    GetPage(
+      name: _Paths.NAVBAR_CREATOR,
+      page: () => const NavbarCreatorView(),
+      binding: NavbarCreatorBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE_CREATOR,
+      page: () => const ProfileCreatorView(),
+      binding: ProfileCreatorBinding(),
     ),
   ];
 }
