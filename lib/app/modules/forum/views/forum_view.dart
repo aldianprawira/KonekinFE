@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:konekin/app/shared/theme/color.dart';
+import 'package:konekin/app/shared/widget/forum_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../controllers/forum_controller.dart';
@@ -25,7 +26,7 @@ class ForumView extends GetView<ForumController> {
             title: "Design",
             image: "assets/images/design.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/J9vj37Slhd55Ilafv7Jhrb");
+              final Uri url = Uri.parse("https://chat.whatsapp.com/CGqXR30pKh2HbYmCJfV0Om");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }
@@ -34,119 +35,94 @@ class ForumView extends GetView<ForumController> {
           ForumCard(
             title: "Business",
             image: "assets/images/report.jpg",
+            onTap: () async {
+              final Uri url = Uri.parse("https://chat.whatsapp.com/InVMgffSDAy75EUvRyVl18");
+              if (!await launchUrl(url)) {
+                throw Exception("Could not launch $url");
+              }
+            },
           ),
           ForumCard(
             title: "Development",
             image: "assets/images/development.jpg",
+            onTap: () async {
+              final Uri url = Uri.parse("https://chat.whatsapp.com/KX0Yuw0WaBG1UGQ5MGaQOM");
+              if (!await launchUrl(url)) {
+                throw Exception("Could not launch $url");
+              }
+            },
           ),
           ForumCard(
             title: "IT & Software",
             image: "assets/images/it.jpg",
+            onTap: () async {
+              final Uri url = Uri.parse("https://chat.whatsapp.com/HP15qezfnqiKxYcmUF6V8s");
+              if (!await launchUrl(url)) {
+                throw Exception("Could not launch $url");
+              }
+            },
           ),
           ForumCard(
             title: "Personal Development",
             image: "assets/images/personalDev.jpg",
+            onTap: () async {
+              final Uri url = Uri.parse("https://chat.whatsapp.com/H8UZQcg7xcXJcjbSQz2K2j");
+              if (!await launchUrl(url)) {
+                throw Exception("Could not launch $url");
+              }
+            },
           ),
           ForumCard(
             title: "3D & Animation",
             image: "assets/images/blender.jpg",
+            onTap: () async {
+              final Uri url = Uri.parse("https://chat.whatsapp.com/G3he87Tu1nI7GT9t0ddMMv");
+              if (!await launchUrl(url)) {
+                throw Exception("Could not launch $url");
+              }
+            },
           ),
           ForumCard(
             title: "Finance & Accounting",
             image: "assets/images/finance.jpg",
+            onTap: () async {
+              final Uri url = Uri.parse("https://chat.whatsapp.com/HV2UmmouNYE4iL1lzfy2ip");
+              if (!await launchUrl(url)) {
+                throw Exception("Could not launch $url");
+              }
+            },
           ),
           ForumCard(
             title: "Marketing",
             image: "assets/images/marketing.jpg",
+            onTap: () async {
+              final Uri url = Uri.parse("https://chat.whatsapp.com/I1HOKZxNonW8VzLpph6tHf");
+              if (!await launchUrl(url)) {
+                throw Exception("Could not launch $url");
+              }
+            },
           ),
           ForumCard(
             title: "Lifestyle",
             image: "assets/images/lifestyle.jpg",
+            onTap: () async {
+              final Uri url = Uri.parse("https://chat.whatsapp.com/CM0kihPeEtl06kb62HXe9S");
+              if (!await launchUrl(url)) {
+                throw Exception("Could not launch $url");
+              }
+            },
           ),
           ForumCard(
             title: "Health & Fitness",
             image: "assets/images/fitness.jpg",
-          ),
-          ForumCard(
-            title: "Design",
-            image: "assets/images/design.jpg",
-          ),
-          ForumCard(
-            title: "Business",
-            image: "assets/images/report.jpg",
-          ),
-          ForumCard(
-            title: "Development",
-            image: "assets/images/development.jpg",
-          ),
-          ForumCard(
-            title: "IT & Software",
-            image: "assets/images/it.jpg",
-          ),
-          ForumCard(
-            title: "Personal Development",
-            image: "assets/images/personalDev.jpg",
-          ),
-          ForumCard(
-            title: "3D & Animation",
-            image: "assets/images/blender.jpg",
-          ),
-          ForumCard(
-            title: "Finance & Accounting",
-            image: "assets/images/finance.jpg",
-          ),
-          ForumCard(
-            title: "Marketing",
-            image: "assets/images/marketing.jpg",
-          ),
-          ForumCard(
-            title: "Lifestyle",
-            image: "assets/images/lifestyle.jpg",
-          ),
-          ForumCard(
-            title: "Health & Fitness",
-            image: "assets/images/fitness.jpg",
+            onTap: () async {
+              final Uri url = Uri.parse("https://chat.whatsapp.com/LqulRRfa6Dh4ZAo2r7y2DN");
+              if (!await launchUrl(url)) {
+                throw Exception("Could not launch $url");
+              }
+            },
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ForumCard extends StatelessWidget {
-  String title;
-  String image;
-  void Function()? onTap;
-  ForumCard({
-    super.key,
-    required this.title,
-    required this.image,
-    this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.black,
-          image: DecorationImage(
-            image: AssetImage(image),
-            colorFilter: ColorFilter.mode(black.withOpacity(0.5), BlendMode.dstATop),
-            fit: BoxFit.cover,
-          ),
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Text(
-          title,
-          style: TextStyle(
-            color: white,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
       ),
     );
   }

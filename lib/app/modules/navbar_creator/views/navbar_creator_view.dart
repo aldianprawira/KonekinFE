@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:konekin/app/shared/theme/color.dart';
 
 import '../controllers/navbar_creator_controller.dart';
 
@@ -28,6 +29,7 @@ class NavbarCreatorView extends GetView<NavbarCreatorController> {
               label: "Profile",
             ),
           ],
+          selectedItemColor: primary,
         ),
       ),
     );

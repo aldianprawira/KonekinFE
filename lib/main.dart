@@ -12,6 +12,7 @@ void main() {
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       theme: theme,
+      debugShowCheckedModeBanner: false,
     ),
   );
 }

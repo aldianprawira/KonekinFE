@@ -48,7 +48,7 @@ class ProfileCreatorView extends GetView<ProfileCreatorController> {
             alignment: Alignment.bottomCenter,
             child: Container(
               width: Get.width,
-              height: Get.height * 0.65,
+              height: Get.height * 0.7 - kBottomNavigationBarHeight,
               decoration: BoxDecoration(
                 color: white,
                 borderRadius: const BorderRadius.only(
@@ -69,14 +69,11 @@ class ProfileCreatorView extends GetView<ProfileCreatorController> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 16),
                     ProfileCard(
                       title: "Edit Profile",
                       icon: Icon(Icons.person, color: primary),
-                    ),
-                    ProfileCard(
-                      title: "Change Password",
-                      icon: Icon(Icons.key, color: primary),
+                      onTap: () => Get.toNamed(Routes.EDIT_PROFILE_CREATOR),
                     ),
                     ProfileCard(
                       title: "Switch to Audience",

@@ -67,24 +67,24 @@ class IntroductionView extends GetView<IntroductionController> {
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: TextButton(
-                    onPressed: () => Get.offAllNamed(Routes.REGISTER),
-                    child: Text(
-                      "Skip",
-                      style: TextStyle(color: primary, fontSize: 18),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.all(20),
+          //   child: Column(
+          //     mainAxisAlignment: MainAxisAlignment.end,
+          //     children: [
+          //       Align(
+          //         alignment: Alignment.bottomRight,
+          //         child: TextButton(
+          //           onPressed: () => Get.offAllNamed(Routes.REGISTER),
+          //           child: Text(
+          //             "Skip",
+          //             style: TextStyle(color: primary, fontSize: 18),
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
       Stack(

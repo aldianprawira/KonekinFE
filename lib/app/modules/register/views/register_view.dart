@@ -22,7 +22,7 @@ class RegisterView extends GetView<RegisterController> {
         key: controller.formKey,
         autovalidateMode: AutovalidateMode.disabled,
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -140,7 +140,6 @@ class RegisterView extends GetView<RegisterController> {
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 16),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                       ),
                       child: const Text(
                         "Register",

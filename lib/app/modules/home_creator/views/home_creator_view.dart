@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:konekin/app/routes/app_pages.dart';
 import 'package:konekin/app/shared/theme/color.dart';
 import 'package:konekin/app/shared/widget/secondary_card.dart';
 
@@ -16,7 +17,7 @@ class HomeCreatorView extends GetView<HomeCreatorController> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
         child: Column(
           children: [
             SecondaryCard(
@@ -65,7 +66,8 @@ class HomeCreatorView extends GetView<HomeCreatorController> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => Get.toNamed(Routes.UPLOAD_VIDEO),
+        backgroundColor: primary,
         child: const Icon(Icons.add),
       ),
     );

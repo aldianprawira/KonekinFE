@@ -11,13 +11,13 @@ class LogoKonekinOutlined extends StatelessWidget {
       height: 36,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: primary, width: 2),
+        border: Border.all(color: white, width: 2),
       ),
       child: Center(
         child: Text(
           "Konekin",
           style: TextStyle(
-            color: primary,
+            color: white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),

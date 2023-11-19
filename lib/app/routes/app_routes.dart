@@ -16,6 +16,9 @@ abstract class Routes {
   static const HOME_CREATOR = _Paths.HOME_CREATOR;
   static const NAVBAR_CREATOR = _Paths.NAVBAR_CREATOR;
   static const PROFILE_CREATOR = _Paths.PROFILE_CREATOR;
+  static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
+  static const UPLOAD_VIDEO = _Paths.UPLOAD_VIDEO;
+  static const EDIT_PROFILE_CREATOR = _Paths.EDIT_PROFILE_CREATOR;
 }
 
 abstract class _Paths {
@@ -33,4 +36,7 @@ abstract class _Paths {
   static const HOME_CREATOR = '/home-creator';
   static const NAVBAR_CREATOR = '/navbar-creator';
   static const PROFILE_CREATOR = '/profile-creator';
+  static const EDIT_PROFILE = '/edit-profile';
+  static const UPLOAD_VIDEO = '/upload-video';
+  static const EDIT_PROFILE_CREATOR = '/edit-profile-creator';
 }

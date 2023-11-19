@@ -2,6 +2,10 @@ import 'package:get/get.dart';
 
 import '../modules/detail_video/bindings/detail_video_binding.dart';
 import '../modules/detail_video/views/detail_video_view.dart';
+import '../modules/edit_profile/bindings/edit_profile_binding.dart';
+import '../modules/edit_profile/views/edit_profile_view.dart';
+import '../modules/edit_profile_creator/bindings/edit_profile_creator_binding.dart';
+import '../modules/edit_profile_creator/views/edit_profile_creator_view.dart';
 import '../modules/forum/bindings/forum_binding.dart';
 import '../modules/forum/views/forum_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -26,6 +30,8 @@ import '../modules/reset_password/bindings/reset_password_binding.dart';
 import '../modules/reset_password/views/reset_password_view.dart';
 import '../modules/splashscreen/bindings/splashscreen_binding.dart';
 import '../modules/splashscreen/views/splashscreen_view.dart';
+import '../modules/upload_video/bindings/upload_video_binding.dart';
+import '../modules/upload_video/views/upload_video_view.dart';
 
 part 'app_routes.dart';
 
@@ -99,6 +105,21 @@ class AppPages {
       name: _Paths.PROFILE_CREATOR,
       page: () => const ProfileCreatorView(),
       binding: ProfileCreatorBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_PROFILE,
+      page: () => const EditProfileView(),
+      binding: EditProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.UPLOAD_VIDEO,
+      page: () => const UploadVideoView(),
+      binding: UploadVideoBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_PROFILE_CREATOR,
+      page: () => const EditProfileCreatorView(),
+      binding: EditProfileCreatorBinding(),
     ),
   ];
 }
