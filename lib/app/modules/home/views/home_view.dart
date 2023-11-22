@@ -15,6 +15,12 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(
         title: const LogoKonekinOutlined(),
+        actions: [
+          IconButton(
+            onPressed: () => Get.toNamed(Routes.VIDEO_PLAYER_UI),
+            icon: const Icon(Icons.play_circle),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 16),
@@ -43,7 +49,7 @@ class HomeView extends GetView<HomeController> {
                       price: "Rp149.000,00",
                       bestSeller: true,
                       onTap: () => Get.toNamed(
-                        Routes.DETAIL_VIDEO,
+                        Routes.VIDEO_OVERVIEW,
                         arguments: {
                           "image": "assets/images/ux.jpg",
                           "title": "The Ultimate UX Portfolio Course",
@@ -55,15 +61,17 @@ class HomeView extends GetView<HomeController> {
                     ),
                     RecommendationCard(
                       image: "assets/images/report.jpg",
-                      title: "Crystal Reports for SAP Business One Mastery Training Course",
+                      title:
+                          "Crystal Reports for SAP Business One Mastery Training Course",
                       creator: "Michael Taylor",
                       price: "Rp149.000,00",
                       bestSeller: true,
                       onTap: () => Get.toNamed(
-                        Routes.DETAIL_VIDEO,
+                        Routes.VIDEO_OVERVIEW,
                         arguments: {
                           "image": "assets/images/report.jpg",
-                          "title": "Crystal Reports for SAP Business One Mastery Training Course",
+                          "title":
+                              "Crystal Reports for SAP Business One Mastery Training Course",
                           "bestSeller": true,
                           "creator": "Michael Taylor",
                           "price": "Rp149.000,00",
@@ -72,7 +80,8 @@ class HomeView extends GetView<HomeController> {
                     ),
                     RecommendationCard(
                       image: "assets/images/blender.jpg",
-                      title: "Complete Blender Creator: Learn 3D Modelling for Beginners",
+                      title:
+                          "Complete Blender Creator: Learn 3D Modelling for Beginners",
                       creator: "GameDev.tv Team, Rick Davidson, Grant Abbitt",
                       price: "Rp159.000,00",
                       bestSeller: true,
@@ -135,7 +144,7 @@ class HomeView extends GetView<HomeController> {
                       price: "Rp149.000,00",
                       bestSeller: true,
                       onTap: () => Get.toNamed(
-                        Routes.DETAIL_VIDEO,
+                        Routes.VIDEO_OVERVIEW,
                         arguments: {
                           "image": "assets/images/pcb.jpg",
                           "title": "Crash Course Electronics and PCB Design",
@@ -147,17 +156,20 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/blender.jpg",
-                      title: "Complete Blender Creator: Learn 3D Modelling for Beginners",
+                      title:
+                          "Complete Blender Creator: Learn 3D Modelling for Beginners",
                       creator: "GameDev.tv Team, Rick Davidson, Grant Abbitt",
                       price: "Rp159.000,00",
                       bestSeller: true,
                       onTap: () => Get.toNamed(
-                        Routes.DETAIL_VIDEO,
+                        Routes.VIDEO_OVERVIEW,
                         arguments: {
                           "image": "assets/images/blender.jpg",
-                          "title": "Complete Blender Creator: Learn 3D Modelling for Beginners",
+                          "title":
+                              "Complete Blender Creator: Learn 3D Modelling for Beginners",
                           "bestSeller": true,
-                          "creator": "GameDev.tv Team, Rick Davidson, Grant Abbitt",
+                          "creator":
+                              "GameDev.tv Team, Rick Davidson, Grant Abbitt",
                           "price": "Rp159.000,00",
                         },
                       ),
@@ -171,7 +183,8 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/house.jpg",
-                      title: "3D House Design Mastery in Blender 3x - Grapics & Design",
+                      title:
+                          "3D House Design Mastery in Blender 3x - Grapics & Design",
                       creator: "Thomas McDonald",
                       price: "Rp149.000,00",
                       bestSeller: false,
@@ -222,7 +235,8 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/report.jpg",
-                      title: "Crystal Reports for SAP Business One Mastery Training Course",
+                      title:
+                          "Crystal Reports for SAP Business One Mastery Training Course",
                       creator: "Michael Taylor",
                       price: "Rp149.000,00",
                       bestSeller: true,
@@ -243,7 +257,8 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/engineer.jpg",
-                      title: "Supervisor Leadership Skills for a Safe Workplace",
+                      title:
+                          "Supervisor Leadership Skills for a Safe Workplace",
                       creator: "Marie-Claire Ross",
                       price: "Rp149.000,00",
                       bestSeller: false,
@@ -287,7 +302,8 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/blender.jpg",
-                      title: "Complete Blender Creator: Learn 3D Modelling for Beginners",
+                      title:
+                          "Complete Blender Creator: Learn 3D Modelling for Beginners",
                       creator: "GameDev.tv Team, Rick Davidson, Grant Abbitt",
                       price: "Rp159.000,00",
                       bestSeller: true,
@@ -301,7 +317,8 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/house.jpg",
-                      title: "3D House Design Mastery in Blender 3x - Grapics & Design",
+                      title:
+                          "3D House Design Mastery in Blender 3x - Grapics & Design",
                       creator: "Thomas McDonald",
                       price: "Rp149.000,00",
                       bestSeller: false,
@@ -352,7 +369,8 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/report.jpg",
-                      title: "Crystal Reports for SAP Business One Mastery Training Course",
+                      title:
+                          "Crystal Reports for SAP Business One Mastery Training Course",
                       creator: "Michael Taylor",
                       price: "Rp149.000,00",
                       bestSeller: true,
@@ -373,7 +391,8 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/engineer.jpg",
-                      title: "Supervisor Leadership Skills for a Safe Workplace",
+                      title:
+                          "Supervisor Leadership Skills for a Safe Workplace",
                       creator: "Marie-Claire Ross",
                       price: "Rp149.000,00",
                       bestSeller: false,

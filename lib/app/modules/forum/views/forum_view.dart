@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:konekin/app/shared/theme/color.dart';
 import 'package:konekin/app/shared/widget/forum_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -26,7 +25,8 @@ class ForumView extends GetView<ForumController> {
             title: "Design",
             image: "assets/images/design.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/CGqXR30pKh2HbYmCJfV0Om");
+              final Uri url =
+                  Uri.parse("https://chat.whatsapp.com/CGqXR30pKh2HbYmCJfV0Om");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }
@@ -36,7 +36,8 @@ class ForumView extends GetView<ForumController> {
             title: "Business",
             image: "assets/images/report.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/InVMgffSDAy75EUvRyVl18");
+              final Uri url =
+                  Uri.parse("https://chat.whatsapp.com/InVMgffSDAy75EUvRyVl18");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }
@@ -46,7 +47,8 @@ class ForumView extends GetView<ForumController> {
             title: "Development",
             image: "assets/images/development.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/KX0Yuw0WaBG1UGQ5MGaQOM");
+              final Uri url =
+                  Uri.parse("https://chat.whatsapp.com/KX0Yuw0WaBG1UGQ5MGaQOM");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }
@@ -56,7 +58,8 @@ class ForumView extends GetView<ForumController> {
             title: "IT & Software",
             image: "assets/images/it.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/HP15qezfnqiKxYcmUF6V8s");
+              final Uri url =
+                  Uri.parse("https://chat.whatsapp.com/HP15qezfnqiKxYcmUF6V8s");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }
@@ -66,7 +69,8 @@ class ForumView extends GetView<ForumController> {
             title: "Personal Development",
             image: "assets/images/personalDev.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/H8UZQcg7xcXJcjbSQz2K2j");
+              final Uri url =
+                  Uri.parse("https://chat.whatsapp.com/H8UZQcg7xcXJcjbSQz2K2j");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }
@@ -76,7 +80,8 @@ class ForumView extends GetView<ForumController> {
             title: "3D & Animation",
             image: "assets/images/blender.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/G3he87Tu1nI7GT9t0ddMMv");
+              final Uri url =
+                  Uri.parse("https://chat.whatsapp.com/G3he87Tu1nI7GT9t0ddMMv");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }
@@ -86,7 +91,8 @@ class ForumView extends GetView<ForumController> {
             title: "Finance & Accounting",
             image: "assets/images/finance.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/HV2UmmouNYE4iL1lzfy2ip");
+              final Uri url =
+                  Uri.parse("https://chat.whatsapp.com/HV2UmmouNYE4iL1lzfy2ip");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }
@@ -96,7 +102,8 @@ class ForumView extends GetView<ForumController> {
             title: "Marketing",
             image: "assets/images/marketing.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/I1HOKZxNonW8VzLpph6tHf");
+              final Uri url =
+                  Uri.parse("https://chat.whatsapp.com/I1HOKZxNonW8VzLpph6tHf");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }
@@ -106,7 +113,8 @@ class ForumView extends GetView<ForumController> {
             title: "Lifestyle",
             image: "assets/images/lifestyle.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/CM0kihPeEtl06kb62HXe9S");
+              final Uri url =
+                  Uri.parse("https://chat.whatsapp.com/CM0kihPeEtl06kb62HXe9S");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }
@@ -116,7 +124,8 @@ class ForumView extends GetView<ForumController> {
             title: "Health & Fitness",
             image: "assets/images/fitness.jpg",
             onTap: () async {
-              final Uri url = Uri.parse("https://chat.whatsapp.com/LqulRRfa6Dh4ZAo2r7y2DN");
+              final Uri url =
+                  Uri.parse("https://chat.whatsapp.com/LqulRRfa6Dh4ZAo2r7y2DN");
               if (!await launchUrl(url)) {
                 throw Exception("Could not launch $url");
               }

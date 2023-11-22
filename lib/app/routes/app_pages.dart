@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 
-import '../modules/detail_video/bindings/detail_video_binding.dart';
-import '../modules/detail_video/views/detail_video_view.dart';
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
 import '../modules/edit_profile/views/edit_profile_view.dart';
 import '../modules/edit_profile_creator/bindings/edit_profile_creator_binding.dart';
@@ -32,6 +30,10 @@ import '../modules/splashscreen/bindings/splashscreen_binding.dart';
 import '../modules/splashscreen/views/splashscreen_view.dart';
 import '../modules/upload_video/bindings/upload_video_binding.dart';
 import '../modules/upload_video/views/upload_video_view.dart';
+import '../modules/video_overview/bindings/video_overview_binding.dart';
+import '../modules/video_overview/views/video_overview_view.dart';
+import '../modules/video_player_ui/bindings/video_player_ui_binding.dart';
+import '../modules/video_player_ui/views/video_player_ui_view.dart';
 
 part 'app_routes.dart';
 
@@ -87,11 +89,6 @@ class AppPages {
       binding: ProfileBinding(),
     ),
     GetPage(
-      name: _Paths.DETAIL_VIDEO,
-      page: () => DetailVideoView(),
-      binding: DetailVideoBinding(),
-    ),
-    GetPage(
       name: _Paths.HOME_CREATOR,
       page: () => const HomeCreatorView(),
       binding: HomeCreatorBinding(),
@@ -120,6 +117,16 @@ class AppPages {
       name: _Paths.EDIT_PROFILE_CREATOR,
       page: () => const EditProfileCreatorView(),
       binding: EditProfileCreatorBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIDEO_OVERVIEW,
+      page: () => VideoOverviewView(),
+      binding: VideoOverviewBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIDEO_PLAYER_UI,
+      page: () => const VideoPlayerUiView(),
+      binding: VideoPlayerUiBinding(),
     ),
   ];
 }
