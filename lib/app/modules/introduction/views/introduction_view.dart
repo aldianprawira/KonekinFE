@@ -1,10 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:konekin/app/routes/app_pages.dart';
-import 'package:konekin/app/shared/theme/color.dart';
 
+import '../../../routes/app_pages.dart';
+import '../../../shared/theme/color.dart';
 import '../controllers/introduction_controller.dart';
 
 class IntroductionView extends GetView<IntroductionController> {
@@ -172,7 +171,7 @@ class IntroductionView extends GetView<IntroductionController> {
             fit: BoxFit.cover,
           ),
           CarouselSlider(
-            carouselController: controller.CarouselC,
+            carouselController: controller.carouselC,
             items: introductionItem,
             options: CarouselOptions(
               height: Get.height,
@@ -188,7 +187,7 @@ class IntroductionView extends GetView<IntroductionController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: introductionItem.asMap().entries.map((entry) {
                   return GestureDetector(
-                    onTap: () => controller.CarouselC.animateToPage(entry.key),
+                    onTap: () => controller.carouselC.animateToPage(entry.key),
                     child: Obx(
                       () => Container(
                         width: 40,

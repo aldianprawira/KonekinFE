@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:konekin/app/modules/forum/views/forum_view.dart';
-import 'package:konekin/app/modules/home_creator/views/home_creator_view.dart';
-import 'package:konekin/app/modules/profile_creator/views/profile_creator_view.dart';
+
+import '../../forum/views/forum_view.dart';
+import '../../home_creator/views/home_creator_view.dart';
+import '../../profile_creator/views/profile_creator_view.dart';
 
 class NavbarCreatorController extends GetxController {
   List<Widget> page = [

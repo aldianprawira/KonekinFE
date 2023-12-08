@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
 import '../../../shared/theme/color.dart';
-import '../controllers/edit_profile_creator_controller.dart';
+import '../controllers/register_creator_controller.dart';
 
-class EditProfileCreatorView extends GetView<EditProfileCreatorController> {
-  const EditProfileCreatorView({Key? key}) : super(key: key);
+class RegisterCreatorView extends GetView<RegisterCreatorController> {
+  const RegisterCreatorView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    controller.bankNameC.text = Get.arguments["BankName"];
-    controller.bankAccNumC.text = Get.arguments["BankAccNum"];
     String uid = Get.arguments["UID"];
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Edit Profile"),
+        title: const Text('Register Creator'),
+        centerTitle: true,
       ),
       body: Form(
         key: controller.formKey,
@@ -66,7 +66,7 @@ class EditProfileCreatorView extends GetView<EditProfileCreatorController> {
                       if (controller.formKey.currentState!.validate()) {
                         // If the form is valid, display a snackbar. In the real world,
                         // you'd often call a server or save the information in a database.
-                        controller.editProfile(uid);
+                        controller.registerCreator(uid);
                       }
                     },
                     style: ElevatedButton.styleFrom(
@@ -75,7 +75,7 @@ class EditProfileCreatorView extends GetView<EditProfileCreatorController> {
                     ),
                     child: controller.isLoading.isFalse
                         ? const Text(
-                            "Save",
+                            "Register",
                             style: TextStyle(
                               fontSize: 20,
                             ),

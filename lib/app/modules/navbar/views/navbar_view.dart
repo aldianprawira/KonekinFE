@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:konekin/app/shared/theme/color.dart';
 
+import '../../../shared/theme/color.dart';
+import '../../profile/controllers/profile_controller.dart';
 import '../controllers/navbar_controller.dart';
 
 class NavbarView extends GetView<NavbarController> {
@@ -11,6 +11,7 @@ class NavbarView extends GetView<NavbarController> {
   Widget build(BuildContext context) {
     // Get.put(HomeController());
     // Get.put(ForumController());
+    Get.put(ProfileController());
     return GetBuilder<NavbarController>(
       builder: (controller) => Scaffold(
         body: controller.page[controller.index],

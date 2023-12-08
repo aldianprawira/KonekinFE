@@ -1,11 +1,8 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:konekin/app/routes/app_pages.dart';
 import 'package:konekin/app/shared/theme/color.dart';
-import 'package:konekin/app/shared/widget/logo_konekin_outlined.dart';
 
 import '../controllers/register_controller.dart';
 
@@ -16,7 +13,7 @@ class RegisterView extends GetView<RegisterController> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const LogoKonekinOutlined(),
+        title: const Text("Register Account"),
       ),
       body: Form(
         key: controller.formKey,
@@ -26,26 +23,27 @@ class RegisterView extends GetView<RegisterController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
-              const Text(
-                'Register Account',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              const SizedBox(height: 40),
-              const Text("Username", style: TextStyle(fontSize: 16)),
+              // const SizedBox(height: 20),
+              // const Text(
+              //   'Register Account',
+              //   style: TextStyle(
+              //     fontSize: 28,
+              //     fontWeight: FontWeight.w700,
+              //   ),
+              // ),
+              // const SizedBox(height: 16),
+              const Text("Name", style: TextStyle(fontSize: 16)),
               const SizedBox(height: 4),
               TextFormField(
+                controller: controller.nameC,
                 keyboardType: TextInputType.name,
                 textInputAction: TextInputAction.next,
                 decoration: const InputDecoration(
-                  hintText: "Enter your username",
+                  hintText: "Enter your name",
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your username';
+                    return 'Please enter your name';
                   }
                   return null;
                 },
@@ -54,6 +52,7 @@ class RegisterView extends GetView<RegisterController> {
               const Text("Email", style: TextStyle(fontSize: 16)),
               const SizedBox(height: 4),
               TextFormField(
+                controller: controller.emailC,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
                 decoration: const InputDecoration(
@@ -67,10 +66,28 @@ class RegisterView extends GetView<RegisterController> {
                 },
               ),
               const SizedBox(height: 16),
+              const Text("Phone number", style: TextStyle(fontSize: 16)),
+              const SizedBox(height: 4),
+              TextFormField(
+                controller: controller.phoneC,
+                keyboardType: TextInputType.phone,
+                textInputAction: TextInputAction.next,
+                decoration: const InputDecoration(
+                  hintText: "Enter your phone number",
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your phone number';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 16),
               const Text("Password", style: TextStyle(fontSize: 16)),
               const SizedBox(height: 4),
               Obx(
                 () => TextFormField(
+                  controller: controller.passC,
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.next,
                   obscureText: controller.isHidden.value,
@@ -97,6 +114,7 @@ class RegisterView extends GetView<RegisterController> {
               const SizedBox(height: 4),
               Obx(
                 () => TextFormField(
+                  controller: controller.passValidationC,
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.done,
                   obscureText: controller.isHidden2.value,
@@ -113,6 +131,8 @@ class RegisterView extends GetView<RegisterController> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please re-enter your password';
+                    } else if (value != controller.passC.text) {
+                      return 'Please use the same password';
                     }
                     return null;
                   },
@@ -123,29 +143,33 @@ class RegisterView extends GetView<RegisterController> {
                   alignment: Alignment.bottomCenter,
                   child: SizedBox(
                     width: Get.width,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Validate returns true if the form is valid, or false otherwise.
-                        if (controller.formKey.currentState!.validate()) {
-                          // If the form is valid, display a snackbar. In the real world,
-                          // you'd often call a server or save the information in a database.
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Processing Data')),
-                          );
-                          Timer.periodic(const Duration(seconds: 2), (timer) {
-                            Get.offAllNamed(Routes.NAVBAR);
-                            timer.cancel();
-                          });
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                      ),
-                      child: const Text(
-                        "Register",
-                        style: TextStyle(
-                          fontSize: 20,
+                    child: Obx(
+                      () => ElevatedButton(
+                        onPressed: () {
+                          // Validate returns true if the form is valid, or false otherwise.
+                          if (controller.formKey.currentState!.validate()) {
+                            // If the form is valid, display a snackbar. In the real world,
+                            // you'd often call a server or save the information in a database.
+                            controller.register(controller.emailC.text, controller.passC.text);
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          backgroundColor: controller.isLoading.isFalse ? primary : Colors.grey,
                         ),
+                        child: controller.isLoading.isFalse
+                            ? const Text(
+                                "Register",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              )
+                            : const Text(
+                                "Loding...",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
                       ),
                     ),
                   ),

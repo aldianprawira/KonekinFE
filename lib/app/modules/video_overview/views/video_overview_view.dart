@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:konekin/app/shared/theme/color.dart';
 
+import '../../../shared/theme/color.dart';
 import '../controllers/video_overview_controller.dart';
 
 class VideoOverviewView extends GetView<VideoOverviewController> {
@@ -50,8 +49,7 @@ class VideoOverviewView extends GetView<VideoOverviewController> {
             const SizedBox(height: 8),
             bestSeller == true
                 ? Container(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                    padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                     decoration: BoxDecoration(
                       color: Colors.lime[300],
                       borderRadius: BorderRadius.circular(4),
@@ -73,8 +71,7 @@ class VideoOverviewView extends GetView<VideoOverviewController> {
                 children: [
                   TextSpan(
                     text: creator,
-                    style:
-                        TextStyle(color: primary, fontWeight: FontWeight.bold),
+                    style: TextStyle(color: primary, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -92,8 +89,7 @@ class VideoOverviewView extends GetView<VideoOverviewController> {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 ),
                 child: const Text(
                   "Buy now",

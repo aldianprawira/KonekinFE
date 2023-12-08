@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "514277450029",
+    "project_id": "konekin-firebase",
+    "storage_bucket": "konekin-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514277450029:android:9200d9119fef54a83833a4",
+        "android_client_info": {
+          "package_name": "com.example.konekin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzV-bMTCLo4t-R56iq2Z9MeBg4PV9uWSE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

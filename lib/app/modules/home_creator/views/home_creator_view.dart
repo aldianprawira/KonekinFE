@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:konekin/app/routes/app_pages.dart';
-import 'package:konekin/app/shared/theme/color.dart';
-import 'package:konekin/app/shared/widget/secondary_card.dart';
 
+import '../../../routes/app_pages.dart';
+import '../../../shared/theme/color.dart';
+import '../../../shared/widget/secondary_card.dart';
 import '../controllers/home_creator_controller.dart';
 
 class HomeCreatorView extends GetView<HomeCreatorController> {

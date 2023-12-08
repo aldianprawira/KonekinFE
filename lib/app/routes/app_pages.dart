@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/change_password/bindings/change_password_binding.dart';
+import '../modules/change_password/views/change_password_view.dart';
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
 import '../modules/edit_profile/views/edit_profile_view.dart';
 import '../modules/edit_profile_creator/bindings/edit_profile_creator_binding.dart';
@@ -24,6 +26,8 @@ import '../modules/profile_creator/bindings/profile_creator_binding.dart';
 import '../modules/profile_creator/views/profile_creator_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
+import '../modules/register_creator/bindings/register_creator_binding.dart';
+import '../modules/register_creator/views/register_creator_view.dart';
 import '../modules/reset_password/bindings/reset_password_binding.dart';
 import '../modules/reset_password/views/reset_password_view.dart';
 import '../modules/splashscreen/bindings/splashscreen_binding.dart';
@@ -40,7 +44,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.INTRODUCTION;
+  static const INITIAL = Routes.SPLASHSCREEN;
 
   static final routes = [
     GetPage(
@@ -127,6 +131,16 @@ class AppPages {
       name: _Paths.VIDEO_PLAYER_UI,
       page: () => const VideoPlayerUiView(),
       binding: VideoPlayerUiBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHANGE_PASSWORD,
+      page: () => const ChangePasswordView(),
+      binding: ChangePasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.REGISTER_CREATOR,
+      page: () => const RegisterCreatorView(),
+      binding: RegisterCreatorBinding(),
     ),
   ];
 }

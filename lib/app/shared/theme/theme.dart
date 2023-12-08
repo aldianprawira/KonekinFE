@@ -16,6 +16,7 @@ ThemeData theme = ThemeData(
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
+    // isDense: true,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(8),
     ),
@@ -31,7 +32,7 @@ ThemeData theme = ThemeData(
       borderRadius: BorderRadius.circular(8),
       borderSide: const BorderSide(color: Colors.red),
     ),
-    contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(

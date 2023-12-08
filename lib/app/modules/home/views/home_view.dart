@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:konekin/app/routes/app_pages.dart';
-import 'package:konekin/app/shared/theme/color.dart';
-import 'package:konekin/app/shared/widget/logo_konekin_outlined.dart';
-import 'package:konekin/app/shared/widget/primary_card.dart';
-import 'package:konekin/app/shared/widget/recommendation_card.dart';
 
+import '../../../shared/theme/color.dart';
+import '../../../shared/widget/logo_konekin_outlined.dart';
+import '../../../shared/widget/primary_card.dart';
+import '../../../shared/widget/recommendation_card.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -61,8 +61,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     RecommendationCard(
                       image: "assets/images/report.jpg",
-                      title:
-                          "Crystal Reports for SAP Business One Mastery Training Course",
+                      title: "Crystal Reports for SAP Business One Mastery Training Course",
                       creator: "Michael Taylor",
                       price: "Rp149.000,00",
                       bestSeller: true,
@@ -70,8 +69,7 @@ class HomeView extends GetView<HomeController> {
                         Routes.VIDEO_OVERVIEW,
                         arguments: {
                           "image": "assets/images/report.jpg",
-                          "title":
-                              "Crystal Reports for SAP Business One Mastery Training Course",
+                          "title": "Crystal Reports for SAP Business One Mastery Training Course",
                           "bestSeller": true,
                           "creator": "Michael Taylor",
                           "price": "Rp149.000,00",
@@ -80,8 +78,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     RecommendationCard(
                       image: "assets/images/blender.jpg",
-                      title:
-                          "Complete Blender Creator: Learn 3D Modelling for Beginners",
+                      title: "Complete Blender Creator: Learn 3D Modelling for Beginners",
                       creator: "GameDev.tv Team, Rick Davidson, Grant Abbitt",
                       price: "Rp159.000,00",
                       bestSeller: true,
@@ -156,8 +153,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/blender.jpg",
-                      title:
-                          "Complete Blender Creator: Learn 3D Modelling for Beginners",
+                      title: "Complete Blender Creator: Learn 3D Modelling for Beginners",
                       creator: "GameDev.tv Team, Rick Davidson, Grant Abbitt",
                       price: "Rp159.000,00",
                       bestSeller: true,
@@ -165,11 +161,9 @@ class HomeView extends GetView<HomeController> {
                         Routes.VIDEO_OVERVIEW,
                         arguments: {
                           "image": "assets/images/blender.jpg",
-                          "title":
-                              "Complete Blender Creator: Learn 3D Modelling for Beginners",
+                          "title": "Complete Blender Creator: Learn 3D Modelling for Beginners",
                           "bestSeller": true,
-                          "creator":
-                              "GameDev.tv Team, Rick Davidson, Grant Abbitt",
+                          "creator": "GameDev.tv Team, Rick Davidson, Grant Abbitt",
                           "price": "Rp159.000,00",
                         },
                       ),
@@ -183,8 +177,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/house.jpg",
-                      title:
-                          "3D House Design Mastery in Blender 3x - Grapics & Design",
+                      title: "3D House Design Mastery in Blender 3x - Grapics & Design",
                       creator: "Thomas McDonald",
                       price: "Rp149.000,00",
                       bestSeller: false,
@@ -235,8 +228,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/report.jpg",
-                      title:
-                          "Crystal Reports for SAP Business One Mastery Training Course",
+                      title: "Crystal Reports for SAP Business One Mastery Training Course",
                       creator: "Michael Taylor",
                       price: "Rp149.000,00",
                       bestSeller: true,
@@ -257,8 +249,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/engineer.jpg",
-                      title:
-                          "Supervisor Leadership Skills for a Safe Workplace",
+                      title: "Supervisor Leadership Skills for a Safe Workplace",
                       creator: "Marie-Claire Ross",
                       price: "Rp149.000,00",
                       bestSeller: false,
@@ -302,8 +293,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/blender.jpg",
-                      title:
-                          "Complete Blender Creator: Learn 3D Modelling for Beginners",
+                      title: "Complete Blender Creator: Learn 3D Modelling for Beginners",
                       creator: "GameDev.tv Team, Rick Davidson, Grant Abbitt",
                       price: "Rp159.000,00",
                       bestSeller: true,
@@ -317,8 +307,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/house.jpg",
-                      title:
-                          "3D House Design Mastery in Blender 3x - Grapics & Design",
+                      title: "3D House Design Mastery in Blender 3x - Grapics & Design",
                       creator: "Thomas McDonald",
                       price: "Rp149.000,00",
                       bestSeller: false,
@@ -369,8 +358,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/report.jpg",
-                      title:
-                          "Crystal Reports for SAP Business One Mastery Training Course",
+                      title: "Crystal Reports for SAP Business One Mastery Training Course",
                       creator: "Michael Taylor",
                       price: "Rp149.000,00",
                       bestSeller: true,
@@ -391,8 +379,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                     PrimaryCard(
                       image: "assets/images/engineer.jpg",
-                      title:
-                          "Supervisor Leadership Skills for a Safe Workplace",
+                      title: "Supervisor Leadership Skills for a Safe Workplace",
                       creator: "Marie-Claire Ross",
                       price: "Rp149.000,00",
                       bestSeller: false,
