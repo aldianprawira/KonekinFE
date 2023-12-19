@@ -16,6 +16,7 @@ dependencies:
   cloud_firestore: 4.13.3
   firebase_storage: 11.5.3
   image_picker: 1.0.4
+  youtube_player_flutter: 8.1.2
   flutter: 
     sdk: flutter
 

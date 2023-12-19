@@ -23,6 +23,7 @@ abstract class Routes {
   static const VIDEO_PLAYER_UI = _Paths.VIDEO_PLAYER_UI;
   static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
   static const REGISTER_CREATOR = _Paths.REGISTER_CREATOR;
+  static const VIDEO_PLAYER = _Paths.VIDEO_PLAYER;
 }
 
 abstract class _Paths {
@@ -47,4 +48,5 @@ abstract class _Paths {
   static const VIDEO_PLAYER_UI = '/video-player-ui';
   static const CHANGE_PASSWORD = '/change-password';
   static const REGISTER_CREATOR = '/register-creator';
+  static const VIDEO_PLAYER = '/video-player';
 }

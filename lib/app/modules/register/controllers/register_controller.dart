@@ -9,21 +9,15 @@ import '../../../shared/theme/color.dart';
 class RegisterController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  RxBool isHidden = true.obs;
-  RxBool isHidden2 = true.obs;
+  RxBool isHiddenPw = true.obs;
+  RxBool isHiddenConfirmPw = true.obs;
   RxBool isLoading = false.obs;
 
-  // TextEditingController nameC = TextEditingController(text: "Aldian Prawira");
-  // TextEditingController emailC = TextEditingController(text: "aldianprawira99@gmail.com");
-  // TextEditingController phoneC = TextEditingController(text: "081398844808");
-  // TextEditingController passC = TextEditingController(text: "admin123");
-  // TextEditingController passValidationC = TextEditingController(text: "admin123");
-
-  TextEditingController nameC = TextEditingController();
-  TextEditingController emailC = TextEditingController();
-  TextEditingController phoneC = TextEditingController();
-  TextEditingController passC = TextEditingController();
-  TextEditingController passValidationC = TextEditingController();
+  TextEditingController nameCtrl = TextEditingController();
+  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController phoneCtrl = TextEditingController();
+  TextEditingController passCtrl = TextEditingController();
+  TextEditingController passValidationCtrl = TextEditingController();
 
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -39,9 +33,9 @@ class RegisterController extends GetxController {
         String uid = credential.user!.uid;
         await firestore.collection("users").doc(uid).set({
           "UID": uid,
-          "Name": nameC.text,
-          "Email": emailC.text,
-          "Phone": phoneC.text,
+          "Name": nameCtrl.text,
+          "Email": emailCtrl.text,
+          "Phone": phoneCtrl.text,
           "Role": "Audience",
           "CreatedAt": DateTime.now().toIso8601String(),
         });

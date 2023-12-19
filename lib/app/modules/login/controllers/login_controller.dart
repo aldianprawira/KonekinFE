@@ -8,11 +8,11 @@ import '../../../shared/theme/color.dart';
 class LoginController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  RxBool isHidden = true.obs;
+  RxBool isHiddenPw = true.obs;
   RxBool isLoading = false.obs;
 
-  TextEditingController emailC = TextEditingController(text: "aldianprawira99@gmail.com");
-  TextEditingController passC = TextEditingController(text: "admin123");
+  TextEditingController emailCtrl = TextEditingController();
+  TextEditingController passCtrl = TextEditingController();
 
   FirebaseAuth auth = FirebaseAuth.instance;
 

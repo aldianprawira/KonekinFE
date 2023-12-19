@@ -43,7 +43,7 @@ class LoginView extends GetView<LoginController> {
               const Text("Email", style: TextStyle(fontSize: 16)),
               const SizedBox(height: 4),
               TextFormField(
-                controller: controller.emailC,
+                controller: controller.emailCtrl,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
                 decoration: const InputDecoration(
@@ -61,14 +61,14 @@ class LoginView extends GetView<LoginController> {
               const SizedBox(height: 4),
               Obx(
                 () => TextFormField(
-                  controller: controller.passC,
+                  controller: controller.passCtrl,
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.done,
-                  obscureText: controller.isHidden.value,
+                  obscureText: controller.isHiddenPw.value,
                   decoration: InputDecoration(
                     hintText: "Enter your password",
                     suffixIcon: IconButton(
-                      onPressed: () => controller.isHidden.toggle(),
+                      onPressed: () => controller.isHiddenPw.toggle(),
                       icon: Icon(
                         Icons.remove_red_eye,
                         color: primary,
@@ -109,7 +109,7 @@ class LoginView extends GetView<LoginController> {
                           if (controller.formKey.currentState!.validate()) {
                             // If the form is valid, display a snackbar. In the real world,
                             // you'd often call a server or save the information in a database.
-                            controller.login(controller.emailC.text, controller.passC.text);
+                            controller.login(controller.emailCtrl.text, controller.passCtrl.text);
                           }
                         },
                         style: ElevatedButton.styleFrom(

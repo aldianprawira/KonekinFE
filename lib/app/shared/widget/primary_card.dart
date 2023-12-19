@@ -25,13 +25,13 @@ class PrimaryCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: Get.width * 0.4,
-        margin: const EdgeInsets.only(right: 20),
+        margin: const EdgeInsets.only(right: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
+              child: Image.network(
                 image,
                 width: Get.width * 0.4,
                 height: Get.width * 0.4 * 3 / 4,

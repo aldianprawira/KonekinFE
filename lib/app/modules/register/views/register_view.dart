@@ -35,7 +35,7 @@ class RegisterView extends GetView<RegisterController> {
               const Text("Name", style: TextStyle(fontSize: 16)),
               const SizedBox(height: 4),
               TextFormField(
-                controller: controller.nameC,
+                controller: controller.nameCtrl,
                 keyboardType: TextInputType.name,
                 textInputAction: TextInputAction.next,
                 decoration: const InputDecoration(
@@ -52,7 +52,7 @@ class RegisterView extends GetView<RegisterController> {
               const Text("Email", style: TextStyle(fontSize: 16)),
               const SizedBox(height: 4),
               TextFormField(
-                controller: controller.emailC,
+                controller: controller.emailCtrl,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
                 decoration: const InputDecoration(
@@ -69,7 +69,7 @@ class RegisterView extends GetView<RegisterController> {
               const Text("Phone number", style: TextStyle(fontSize: 16)),
               const SizedBox(height: 4),
               TextFormField(
-                controller: controller.phoneC,
+                controller: controller.phoneCtrl,
                 keyboardType: TextInputType.phone,
                 textInputAction: TextInputAction.next,
                 decoration: const InputDecoration(
@@ -87,14 +87,14 @@ class RegisterView extends GetView<RegisterController> {
               const SizedBox(height: 4),
               Obx(
                 () => TextFormField(
-                  controller: controller.passC,
+                  controller: controller.passCtrl,
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.next,
-                  obscureText: controller.isHidden.value,
+                  obscureText: controller.isHiddenPw.value,
                   decoration: InputDecoration(
                     hintText: "Enter your password",
                     suffixIcon: IconButton(
-                      onPressed: () => controller.isHidden.toggle(),
+                      onPressed: () => controller.isHiddenPw.toggle(),
                       icon: Icon(
                         Icons.remove_red_eye,
                         color: primary,
@@ -114,14 +114,14 @@ class RegisterView extends GetView<RegisterController> {
               const SizedBox(height: 4),
               Obx(
                 () => TextFormField(
-                  controller: controller.passValidationC,
+                  controller: controller.passValidationCtrl,
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.done,
-                  obscureText: controller.isHidden2.value,
+                  obscureText: controller.isHiddenConfirmPw.value,
                   decoration: InputDecoration(
                     hintText: "Re-enter your password",
                     suffixIcon: IconButton(
-                      onPressed: () => controller.isHidden2.toggle(),
+                      onPressed: () => controller.isHiddenConfirmPw.toggle(),
                       icon: Icon(
                         Icons.remove_red_eye,
                         color: primary,
@@ -131,7 +131,7 @@ class RegisterView extends GetView<RegisterController> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please re-enter your password';
-                    } else if (value != controller.passC.text) {
+                    } else if (value != controller.passCtrl.text) {
                       return 'Please use the same password';
                     }
                     return null;
@@ -150,7 +150,7 @@ class RegisterView extends GetView<RegisterController> {
                           if (controller.formKey.currentState!.validate()) {
                             // If the form is valid, display a snackbar. In the real world,
                             // you'd often call a server or save the information in a database.
-                            controller.register(controller.emailC.text, controller.passC.text);
+                            controller.register(controller.emailCtrl.text, controller.passCtrl.text);
                           }
                         },
                         style: ElevatedButton.styleFrom(

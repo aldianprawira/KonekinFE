@@ -36,6 +36,8 @@ import '../modules/upload_video/bindings/upload_video_binding.dart';
 import '../modules/upload_video/views/upload_video_view.dart';
 import '../modules/video_overview/bindings/video_overview_binding.dart';
 import '../modules/video_overview/views/video_overview_view.dart';
+import '../modules/video_player/bindings/video_player_binding.dart';
+import '../modules/video_player/views/video_player_view.dart';
 import '../modules/video_player_ui/bindings/video_player_ui_binding.dart';
 import '../modules/video_player_ui/views/video_player_ui_view.dart';
 
@@ -141,6 +143,11 @@ class AppPages {
       name: _Paths.REGISTER_CREATOR,
       page: () => const RegisterCreatorView(),
       binding: RegisterCreatorBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIDEO_PLAYER,
+      page: () => const VideoPlayerView(),
+      binding: VideoPlayerBinding(),
     ),
   ];
 }
