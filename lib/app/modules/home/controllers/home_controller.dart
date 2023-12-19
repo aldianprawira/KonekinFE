@@ -5,7 +5,7 @@ class HomeController extends GetxController {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   Future<QuerySnapshot<Map<String, dynamic>>> getData() async {
-    var listData = firestore.collection("videos").where("Category", isEqualTo: "Science").orderBy("CreatedAt").get();
+    var listData = await firestore.collection("videos").orderBy("CreatedAt").get();
     return listData;
   }
 }
