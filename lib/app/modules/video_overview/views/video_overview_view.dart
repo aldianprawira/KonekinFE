@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:konekin/app/routes/app_pages.dart';
 
 import '../../../shared/theme/color.dart';
 import '../controllers/video_overview_controller.dart';
 
 class VideoOverviewView extends GetView<VideoOverviewController> {
   VideoOverviewView({Key? key}) : super(key: key);
-  String image = Get.arguments["image"];
-  String title = Get.arguments["title"];
-  bool bestSeller = Get.arguments["bestSeller"];
-  String creator = Get.arguments["creator"];
-  String price = Get.arguments["price"];
+  String image = Get.arguments["Thumbnail"];
+  String title = Get.arguments["Title"];
+  String description = Get.arguments["Description"];
+  String creator = Get.arguments["Creator"];
+  String price = Get.arguments["Price"];
+  bool bestSeller = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,7 @@ class VideoOverviewView extends GetView<VideoOverviewController> {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
+              child: Image.network(
                 image,
                 width: Get.width,
                 height: (Get.width - 32) * 9 / 16,
@@ -40,7 +42,7 @@ class VideoOverviewView extends GetView<VideoOverviewController> {
             ),
             const SizedBox(height: 8),
             Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus augue vel eros lobortis, at semper sapien sodales. Aenean eget.",
+              description,
               style: TextStyle(
                 color: grey,
                 fontSize: 16,
@@ -86,7 +88,7 @@ class VideoOverviewView extends GetView<VideoOverviewController> {
             SizedBox(
               width: Get.width,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.toNamed(Routes.VIDEO_PLAYER, arguments: Get.arguments["VideoURL"]),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),

@@ -32,7 +32,7 @@ class _VideoPlayerViewState extends State<VideoPlayerView> {
         loop: false,
         isLive: false,
         forceHD: false,
-        enableCaption: true,
+        enableCaption: false,
       ),
     )..addListener(listener);
     _videoMetaData = const YoutubeMetaData();
@@ -98,7 +98,7 @@ class _VideoPlayerViewState extends State<VideoPlayerView> {
       ),
       builder: (context, player) => Scaffold(
         appBar: AppBar(
-          title: const Text("Youtube Player"),
+          title: const Text("Video Player"),
         ),
         body: ListView(
           children: [

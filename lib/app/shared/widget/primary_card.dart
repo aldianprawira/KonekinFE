@@ -41,7 +41,7 @@ class PrimaryCard extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               title,
-              maxLines: 3,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
                 fontSize: 16,

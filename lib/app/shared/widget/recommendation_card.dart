@@ -31,7 +31,7 @@ class RecommendationCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
+              child: Image.network(
                 image,
                 width: Get.width * 0.6,
                 height: Get.width * 0.6 * 3 / 4,
