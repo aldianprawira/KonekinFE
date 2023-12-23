@@ -24,8 +24,10 @@ class LoginController extends GetxController {
         password: password,
       );
       if (credential.user!.emailVerified) {
+        //jika terverif, bisa masuk
         Get.offAllNamed(Routes.NAVBAR);
       } else {
+        //jika belum ferivikasi, harus verifikasi dulu
         Get.defaultDialog(
           title: "Email verification",
           middleText: "You need to verify your email first",

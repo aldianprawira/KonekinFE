@@ -30,7 +30,7 @@ class SecondaryCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(4),
-            child: Image.asset(image, width: 60, height: 60, fit: BoxFit.cover),
+            child: Image.network(image, width: 60, height: 60, fit: BoxFit.cover),
           ),
           const SizedBox(width: 16),
           Expanded(
@@ -39,6 +39,8 @@ class SecondaryCard extends StatelessWidget {
               children: [
                 Text(
                   title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 4),

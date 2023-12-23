@@ -20,6 +20,7 @@ class UploadVideoController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
+  //jika create video baru, user akan otomatis tersematkan di videonya, dapat user dr UID (PKnya)
   Future<DocumentSnapshot<Map<String, dynamic>>> futureProfile() async {
     String uid = auth.currentUser!.uid;
     var userData = firestore.collection("users").doc(uid).get();

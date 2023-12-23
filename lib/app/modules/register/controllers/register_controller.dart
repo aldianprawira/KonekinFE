@@ -13,22 +13,30 @@ class RegisterController extends GetxController {
   RxBool isHiddenConfirmPw = true.obs;
   RxBool isLoading = false.obs;
 
+  //TextEditingController = class untuk menyimpan inputan dari text field
   TextEditingController nameCtrl = TextEditingController();
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController phoneCtrl = TextEditingController();
   TextEditingController passCtrl = TextEditingController();
   TextEditingController passValidationCtrl = TextEditingController();
 
+  //Inisialisasi firebase auth n firebase firestore (database)
+  //jika kita ingin pakai firebase, kita harus memanggil si instance mmilik firebase
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   void register(String email, String password) async {
+    //button di tekan
     try {
       isLoading.value = true;
+      //bikin akun dgn func bawaan firebase
       UserCredential credential = await auth.createUserWithEmailAndPassword(
+        //input
         email: email,
         password: password,
       );
+      //jika user exist, kita simpan uid, kita menyimpan data loginnya ke firestore
+      //set table users berdasarkan uid
       if (credential.user != null) {
         String uid = credential.user!.uid;
         await firestore.collection("users").doc(uid).set({
@@ -39,6 +47,7 @@ class RegisterController extends GetxController {
           "Role": "Audience",
           "CreatedAt": DateTime.now().toIso8601String(),
         });
+        //send email verif jika email belum terverifikasi
         await credential.user!.sendEmailVerification();
         Get.defaultDialog(
           title: "Email verification",
@@ -52,6 +61,7 @@ class RegisterController extends GetxController {
           confirmTextColor: white,
         );
       }
+      //exception
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('The password provided is too weak.');

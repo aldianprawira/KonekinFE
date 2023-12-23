@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,54 +16,38 @@ class HomeCreatorView extends GetView<HomeCreatorController> {
         title: const Text('HomeCreatorView'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-        child: Column(
-          children: [
-            SecondaryCard(
-              image: "assets/images/ux.jpg",
-              title: "The Ultimate UX Portfolio Course",
-              creator: "Oz Chen",
-              price: "Rp149.000,00",
-              bestSeller: true,
-            ),
-            SecondaryCard(
-              image: "assets/images/report.jpg",
-              title: "Crystal Reports for SAP Business One Mastery Training Course",
-              creator: "Michael Taylor",
-              price: "Rp149.000,00",
-              bestSeller: true,
-            ),
-            SecondaryCard(
-              image: "assets/images/blender.jpg",
-              title: "Complete Blender Creator: Learn 3D Modelling for Beginners",
-              creator: "GameDev.tv Team, Rick Davidson, Grant Abbitt",
-              price: "Rp159.000,00",
-              bestSeller: true,
-            ),
-            SecondaryCard(
-              image: "assets/images/pcb.jpg",
-              title: "Crash Course Electronics and PCB Design",
-              creator: "Andre LaMothe",
-              price: "Rp149.000,00",
-              bestSeller: true,
-            ),
-            SecondaryCard(
-              image: "assets/images/medicine.jpg",
-              title: "Become a Pharmacy Technician",
-              creator: "Steven Pettit, Pharm.D.",
-              price: "Rp159.000,00",
-              bestSeller: true,
-            ),
-            SecondaryCard(
-              image: "assets/images/meeting.jpg",
-              title: "Minute Taking at Meetings",
-              creator: "Jane Watson",
-              price: "Rp149.000,00",
-              bestSeller: true,
-            ),
-          ],
-        ),
+      body: FutureBuilder(
+        future: controller.getData(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          List<QueryDocumentSnapshot<Map<String, dynamic>>> listAllDocs = snapshot.data!.docs;
+          print(listAllDocs);
+          if (listAllDocs.isNotEmpty) {
+            return SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+              child: SizedBox(
+                height: Get.height,
+                child: ListView.builder(
+                  itemCount: listAllDocs.length,
+                  itemBuilder: (context, index) {
+                    Map<String, dynamic> data = listAllDocs[index].data();
+                    return SecondaryCard(
+                      image: data["Thumbnail"],
+                      title: data["Title"],
+                      creator: data["Creator"],
+                      price: data["Price"],
+                      bestSeller: true,
+                    );
+                  },
+                ),
+              ),
+            );
+          } else {
+            return const Center(child: Text("Data doesn't exist"));
+          }
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Get.toNamed(Routes.UPLOAD_VIDEO),

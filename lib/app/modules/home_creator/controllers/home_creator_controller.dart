@@ -1,23 +1,17 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 class HomeCreatorController extends GetxController {
-  //TODO: Implement HomeCreatorController
+  FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  Future<QuerySnapshot<Map<String, dynamic>>> getData() async {
+    String uid = auth.currentUser!.uid;
+    var userData = await firestore.collection("users").doc(uid).get();
+    var name = userData.data()!["Name"];
+    print(name);
+    var listData = await firestore.collection("videos").where("Creator", isEqualTo: name).orderBy("CreatedAt", descending: true).get();
+    return listData;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

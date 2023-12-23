@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
             title: "Application",
             initialRoute: snapshot.data != null && snapshot.data!.emailVerified == true ? Routes.NAVBAR : AppPages.INITIAL,
-            // initialRoute: Routes.NAVBAR,
+            // initialRoute: Routes.NAVBAR_CREATOR,
             getPages: AppPages.routes,
             theme: theme,
             debugShowCheckedModeBanner: false,
