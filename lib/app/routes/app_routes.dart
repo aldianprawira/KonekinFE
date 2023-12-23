@@ -24,6 +24,8 @@ abstract class Routes {
   static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
   static const REGISTER_CREATOR = _Paths.REGISTER_CREATOR;
   static const VIDEO_PLAYER = _Paths.VIDEO_PLAYER;
+  static const PAYMENT_DETAIL = _Paths.PAYMENT_DETAIL;
+  static const TRANSACTION_DETAIL = _Paths.TRANSACTION_DETAIL;
 }
 
 abstract class _Paths {
@@ -49,4 +51,6 @@ abstract class _Paths {
   static const CHANGE_PASSWORD = '/change-password';
   static const REGISTER_CREATOR = '/register-creator';
   static const VIDEO_PLAYER = '/video-player';
+  static const PAYMENT_DETAIL = '/payment-detail';
+  static const TRANSACTION_DETAIL = '/transaction-detail';
 }

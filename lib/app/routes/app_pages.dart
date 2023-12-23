@@ -1,5 +1,10 @@
 import 'package:get/get.dart';
 
+import 'package:konekin/app/modules/payment_detail/bindings/payment_detail_binding.dart';
+import 'package:konekin/app/modules/payment_detail/views/payment_detail_view.dart';
+import 'package:konekin/app/modules/transaction_detail/bindings/transaction_detail_binding.dart';
+import 'package:konekin/app/modules/transaction_detail/views/transaction_detail_view.dart';
+
 import '../modules/change_password/bindings/change_password_binding.dart';
 import '../modules/change_password/views/change_password_view.dart';
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
@@ -148,6 +153,16 @@ class AppPages {
       name: _Paths.VIDEO_PLAYER,
       page: () => const VideoPlayerView(),
       binding: VideoPlayerBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAYMENT_DETAIL,
+      page: () => PaymentDetailView(),
+      binding: PaymentDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.TRANSACTION_DETAIL,
+      page: () => TransactionDetailView(),
+      binding: TransactionDetailBinding(),
     ),
   ];
 }
