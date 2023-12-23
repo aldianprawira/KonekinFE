@@ -12,11 +12,7 @@ class HomeCreatorController extends GetxController {
     var userData = await firestore.collection("users").doc(uid).get();
     var name = userData.data()!["Name"];
     print(name);
-    var listData = await firestore
-        .collection("videos")
-        .where("Creator", isEqualTo: name)
-        .orderBy("CreatedAt", descending: true)
-        .get();
+    var listData = await firestore.collection("videos").where("Creator", isEqualTo: name).orderBy("CreatedAt", descending: true).get();
     return listData;
   }
 }

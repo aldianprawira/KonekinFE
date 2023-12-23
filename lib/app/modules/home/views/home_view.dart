@@ -60,9 +60,9 @@ class HomeView extends GetView<HomeController> {
                     ),
                     const SizedBox(height: 16),
                     _buildCourseList("Science", listAllDocs),
-                    const SizedBox(height: 16),
                     _buildCourseList("Design", listAllDocs),
-                    const SizedBox(height: 16),
+                    _buildCourseList("Health", listAllDocs),
+                    _buildCourseList("Technology", listAllDocs),
                   ],
                 ),
               ),
@@ -133,6 +133,7 @@ class HomeView extends GetView<HomeController> {
             },
           ),
         ),
+        const SizedBox(height: 16),
       ],
     );
   }
