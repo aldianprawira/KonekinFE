@@ -23,7 +23,8 @@ class EditProfileCreatorController extends GetxController {
       isLoading.value = true;
       await firestore.collection("users").doc(uid).update(data);
       Get.back();
-      Get.snackbar("Succeed", "Successfully updated profile.", backgroundColor: white);
+      Get.snackbar("Succeed", "Successfully updated profile.",
+          backgroundColor: white);
     } catch (e) {
       print(e);
       Get.defaultDialog(

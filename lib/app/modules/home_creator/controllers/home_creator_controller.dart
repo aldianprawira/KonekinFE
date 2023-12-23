@@ -6,12 +6,17 @@ class HomeCreatorController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
+  //get data, query apa saja yang akan ditampilin di home creator
   Future<QuerySnapshot<Map<String, dynamic>>> getData() async {
     String uid = auth.currentUser!.uid;
     var userData = await firestore.collection("users").doc(uid).get();
     var name = userData.data()!["Name"];
     print(name);
-    var listData = await firestore.collection("videos").where("Creator", isEqualTo: name).orderBy("CreatedAt", descending: true).get();
+    var listData = await firestore
+        .collection("videos")
+        .where("Creator", isEqualTo: name)
+        .orderBy("CreatedAt", descending: true)
+        .get();
     return listData;
   }
 }

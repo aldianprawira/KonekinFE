@@ -27,6 +27,7 @@ class UploadVideoController extends GetxController {
     return userData;
   }
 
+  //upload video
   void uploadVideo(String creator) async {
     Map<String, dynamic> data = {
       "Title": titleCtrl.text,
@@ -38,11 +39,14 @@ class UploadVideoController extends GetxController {
       "Creator": creator,
       "CreatedAt": DateTime.now().toIso8601String(),
     };
+    //jika berhasil upload, maka akan muncul snackbar
     try {
       isLoading.value = true;
       await firestore.collection("videos").add(data);
       Get.back();
-      Get.snackbar("Succeed", "Successfully uploaded video.", backgroundColor: white);
+      Get.snackbar("Succeed", "Successfully uploaded video.",
+          backgroundColor: white);
+      //jika gagal upload, maka akan muncul dialog
     } catch (e) {
       print(e);
       Get.defaultDialog(
