@@ -9,7 +9,7 @@ class ResetPasswordController extends GetxController {
 
   RxBool isLoading = false.obs;
 
-  TextEditingController emailC = TextEditingController(text: "aldianprawira99@gmail.com");
+  TextEditingController emailC = TextEditingController();
 
   FirebaseAuth auth = FirebaseAuth.instance;
 

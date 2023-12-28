@@ -17,6 +17,7 @@ dependencies:
   firebase_storage: 11.5.3
   image_picker: 1.0.4
   youtube_player_flutter: 8.1.2
+  dropdown_search: 5.0.6
   flutter: 
     sdk: flutter
 
@@ -28,6 +29,5 @@ dev_dependencies:
 flutter: 
   assets: 
     - assets/images/
-    #- assets/videos/
   uses-material-design: true
 

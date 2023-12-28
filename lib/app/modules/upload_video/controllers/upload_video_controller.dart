@@ -44,8 +44,7 @@ class UploadVideoController extends GetxController {
       isLoading.value = true;
       await firestore.collection("videos").add(data);
       Get.back();
-      Get.snackbar("Succeed", "Successfully uploaded video.",
-          backgroundColor: white);
+      Get.snackbar("Succeed", "Successfully uploaded video.", backgroundColor: white);
       //jika gagal upload, maka akan muncul dialog
     } catch (e) {
       print(e);

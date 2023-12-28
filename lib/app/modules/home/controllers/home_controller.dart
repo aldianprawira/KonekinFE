@@ -6,10 +6,7 @@ class HomeController extends GetxController {
 
   //get data, query apa saja yang akan ditampilin di home
   Future<QuerySnapshot<Map<String, dynamic>>> getData() async {
-    var listData = await firestore
-        .collection("videos")
-        .orderBy("CreatedAt", descending: true)
-        .get();
+    var listData = await firestore.collection("videos").orderBy("CreatedAt", descending: true).get();
     return listData;
   }
 }

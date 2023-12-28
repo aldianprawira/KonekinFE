@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../routes/app_pages.dart';
 import '../../../shared/theme/color.dart';
@@ -97,6 +98,12 @@ class ProfileCreatorView extends GetView<ProfileCreatorController> {
                           ProfileCard(
                             title: "Help",
                             icon: Icon(Icons.help, color: primary),
+                            onTap: () async {
+                              final Uri url = Uri.parse("https://docs.google.com/document/d/1-XAXTJ7fhj3vXKfGuunh95WCvWixjvcrbFLdBmFL0As/edit?usp=sharing");
+                              if (!await launchUrl(url)) {
+                                throw Exception("Could not launch $url");
+                              }
+                            },
                           ),
                           ProfileCard(
                             title: "Logout",

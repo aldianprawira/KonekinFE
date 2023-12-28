@@ -24,7 +24,7 @@ class PrimaryCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: Get.width * 0.4,
+        width: 160,
         margin: const EdgeInsets.only(right: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,8 +33,8 @@ class PrimaryCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               child: Image.network(
                 image,
-                width: Get.width * 0.4,
-                height: Get.width * 0.4 * 3 / 4,
+                width: 160,
+                height: 160 * 3 / 4,
                 fit: BoxFit.cover,
               ),
             ),

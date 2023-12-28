@@ -31,13 +31,9 @@ class PaymentDetailView extends GetView<PaymentDetailController> {
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Judul Video",
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                  Text("Judul Video", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
                   SizedBox(height: 10),
-                  Text("Nama Creator",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  Text("Nama Creator", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   SizedBox(height: 50),
                   Divider(
                     thickness: 2,
@@ -45,12 +41,8 @@ class PaymentDetailView extends GetView<PaymentDetailController> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Total",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
-                      Text("Rp. 100.000",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold))
+                      Text("Total", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                      Text("Rp. 100.000", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ],
@@ -63,8 +55,9 @@ class PaymentDetailView extends GetView<PaymentDetailController> {
                 width: Get.width,
                 height: 50,
                 child: ElevatedButton(
-                    onPressed: () => Get.toNamed(Routes.TRANSACTION_DETAIL),
-                    child: const Text("Lanjutkan Pembayaran")),
+                  onPressed: () => Get.toNamed(Routes.TRANSACTION_DETAIL),
+                  child: const Text("Lanjutkan Pembayaran"),
+                ),
               ),
             ))
           ],

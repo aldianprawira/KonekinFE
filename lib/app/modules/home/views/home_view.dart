@@ -25,45 +25,50 @@ class HomeView extends GetView<HomeController> {
           }
           List<QueryDocumentSnapshot<Map<String, dynamic>>> listAllDocs = snapshot.data!.docs;
           if (listAllDocs.isNotEmpty) {
-            return SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 16),
-                    const Text(
-                      "Recommended for you",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+            return RefreshIndicator(
+              onRefresh: () => controller.getData(),
+              child: SingleChildScrollView(
+                // physics: const AlwaysScrollableScrollPhysics(),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 16),
+                      const Text(
+                        "Recommended for you",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 8),
-                    SizedBox(
-                      height: 282,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: listAllDocs.length,
-                        itemBuilder: (context, index) {
-                          Map<String, dynamic> data = listAllDocs[index].data();
-                          return RecommendationCard(
-                            onTap: () => Get.toNamed(Routes.VIDEO_OVERVIEW, arguments: data),
-                            image: data["Thumbnail"],
-                            title: data["Title"],
-                            creator: data["Creator"],
-                            price: data["Price"],
-                            bestSeller: true,
-                          );
-                        },
+                      const SizedBox(height: 8),
+                      SizedBox(
+                        height: 289,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: listAllDocs.length,
+                          itemBuilder: (context, index) {
+                            Map<String, dynamic> data = listAllDocs[index].data();
+                            return RecommendationCard(
+                              onTap: () => Get.toNamed(Routes.VIDEO_OVERVIEW, arguments: data),
+                              image: data["Thumbnail"],
+                              title: data["Title"],
+                              creator: data["Creator"],
+                              price: data["Price"],
+                              bestSeller: true,
+                            );
+                          },
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 16),
-                    _buildCourseList("Science", listAllDocs),
-                    _buildCourseList("Design", listAllDocs),
-                    _buildCourseList("Health", listAllDocs),
-                    _buildCourseList("Technology", listAllDocs),
-                  ],
+                      const SizedBox(height: 16),
+                      _buildCourseList("Science", listAllDocs),
+                      _buildCourseList("Design", listAllDocs),
+                      _buildCourseList("Health", listAllDocs),
+                      _buildCourseList("Technology", listAllDocs),
+                    ],
+                  ),
                 ),
               ),
             );
@@ -116,7 +121,7 @@ class HomeView extends GetView<HomeController> {
         ),
         const SizedBox(height: 8),
         SizedBox(
-          height: 225,
+          height: 229,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: filteredDocs.length,

@@ -17,7 +17,7 @@ class VideoOverviewView extends GetView<VideoOverviewController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Video Overview"),
+        title: const Text("Course Overview"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),

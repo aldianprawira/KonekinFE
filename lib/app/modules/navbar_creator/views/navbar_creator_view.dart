@@ -21,7 +21,7 @@ class NavbarCreatorView extends GetView<NavbarCreatorController> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: "home",
+              label: "Home",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.forum),

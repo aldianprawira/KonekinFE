@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
 import '../../../shared/theme/color.dart';
+import '../../../shared/widget/logo_konekin_outlined.dart';
 import '../../../shared/widget/secondary_card.dart';
 import '../controllers/home_creator_controller.dart';
 
@@ -13,8 +14,7 @@ class HomeCreatorView extends GetView<HomeCreatorController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HomeCreatorView'),
-        centerTitle: true,
+        title: const LogoKonekinOutlined(),
       ),
       body: FutureBuilder(
         future: controller.getData(),

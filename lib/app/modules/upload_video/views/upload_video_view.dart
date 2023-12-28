@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:dropdown_search/dropdown_search.dart';
 
 import '../../../shared/theme/color.dart';
 import '../controllers/upload_video_controller.dart';
@@ -10,7 +11,7 @@ class UploadVideoView extends GetView<UploadVideoController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UploadVideoView'),
+        title: const Text("Upload Course"),
         centerTitle: true,
       ),
       body: FutureBuilder(
@@ -66,19 +67,31 @@ class UploadVideoView extends GetView<UploadVideoController> {
                     const SizedBox(height: 16),
                     const Text("Category", style: TextStyle(fontSize: 16)),
                     const SizedBox(height: 4),
-                    TextFormField(
-                      controller: controller.categoryCtrl,
-                      keyboardType: TextInputType.text,
-                      textInputAction: TextInputAction.next,
-                      decoration: const InputDecoration(
-                        hintText: "Enter your video category",
+                    DropdownSearch(
+                      validator: (value) => value == null ? "Please choose your video category" : null,
+                      autoValidateMode: AutovalidateMode.disabled,
+                      items: const [
+                        "Animation",
+                        "Business",
+                        "Design",
+                        "Development",
+                        "Finance & Accounting",
+                        "Health",
+                        "Lifestyle",
+                        "Marketing",
+                        "Personal Development",
+                        "Science",
+                        "IT & Software",
+                      ],
+                      onChanged: (value) => controller.categoryCtrl.text = value!,
+                      dropdownDecoratorProps: const DropDownDecoratorProps(
+                        baseStyle: TextStyle(fontSize: 16),
+                        dropdownSearchDecoration: InputDecoration(
+                          labelText: "Choose your video category",
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                        ),
                       ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your video category';
-                        }
-                        return null;
-                      },
+                      clearButtonProps: const ClearButtonProps(isVisible: true),
                     ),
                     const SizedBox(height: 16),
                     const Text("Video URL", style: TextStyle(fontSize: 16)),
@@ -115,7 +128,15 @@ class UploadVideoView extends GetView<UploadVideoController> {
                       },
                     ),
                     const SizedBox(height: 16),
-                    const Text("Price", style: TextStyle(fontSize: 16)),
+                    RichText(
+                      text: TextSpan(
+                        text: "Price  ",
+                        style: TextStyle(color: black, fontSize: 16),
+                        children: [
+                          TextSpan(text: "  (Ex: Rp999.000,00)", style: TextStyle(color: grey2, fontSize: 16)),
+                        ],
+                      ),
+                    ),
                     const SizedBox(height: 4),
                     TextFormField(
                       controller: controller.priceCtrl,

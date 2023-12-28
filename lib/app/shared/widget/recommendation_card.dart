@@ -24,8 +24,8 @@ class RecommendationCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: Get.width * 0.6,
-        margin: const EdgeInsets.only(right: 20),
+        margin: const EdgeInsets.only(right: 16),
+        width: 240,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -33,8 +33,8 @@ class RecommendationCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               child: Image.network(
                 image,
-                width: Get.width * 0.6,
-                height: Get.width * 0.6 * 3 / 4,
+                width: 240,
+                height: 240 * 3 / 4,
                 fit: BoxFit.cover,
               ),
             ),
