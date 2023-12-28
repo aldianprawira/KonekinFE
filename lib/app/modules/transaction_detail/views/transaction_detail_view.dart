@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/transaction_detail_controller.dart';
 
 class TransactionDetailView extends GetView<TransactionDetailController> {
@@ -234,7 +235,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                   width: Get.width,
                   height: 50,
                   child: ElevatedButton(
-                    onPressed: () => {},
+                    onPressed: () => Get.toNamed(Routes.TRANSACTION_DONE),
                     child: const Text("Lanjutkan Pembayaran"),
                   ),
                 ),
