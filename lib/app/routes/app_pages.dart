@@ -4,6 +4,8 @@ import 'package:konekin/app/modules/payment_detail/bindings/payment_detail_bindi
 import 'package:konekin/app/modules/payment_detail/views/payment_detail_view.dart';
 import 'package:konekin/app/modules/transaction_detail/bindings/transaction_detail_binding.dart';
 import 'package:konekin/app/modules/transaction_detail/views/transaction_detail_view.dart';
+import 'package:konekin/app/modules/transaction_done/bindings/transaction_done_binding.dart';
+import 'package:konekin/app/modules/transaction_done/views/transaction_done_view.dart';
 
 import '../modules/change_password/bindings/change_password_binding.dart';
 import '../modules/change_password/views/change_password_view.dart';
@@ -163,6 +165,11 @@ class AppPages {
       name: _Paths.TRANSACTION_DETAIL,
       page: () => TransactionDetailView(),
       binding: TransactionDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.TRANSACTION_DONE,
+      page: () => TransactionDoneView(),
+      binding: TransactionDoneBinding(),
     ),
   ];
 }

@@ -26,6 +26,7 @@ abstract class Routes {
   static const VIDEO_PLAYER = _Paths.VIDEO_PLAYER;
   static const PAYMENT_DETAIL = _Paths.PAYMENT_DETAIL;
   static const TRANSACTION_DETAIL = _Paths.TRANSACTION_DETAIL;
+  static const TRANSACTION_DONE = _Paths.TRANSACTION_DONE;
 }
 
 abstract class _Paths {
@@ -53,4 +54,5 @@ abstract class _Paths {
   static const VIDEO_PLAYER = '/video-player';
   static const PAYMENT_DETAIL = '/payment-detail';
   static const TRANSACTION_DETAIL = '/transaction-detail';
+  static const TRANSACTION_DONE = '/transaction-done';
 }
