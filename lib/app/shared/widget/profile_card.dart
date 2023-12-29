@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:konekin/app/shared/theme/color.dart';
+
+import '../theme/color.dart';
 
 class ProfileCard extends StatelessWidget {
-  String title;
-  Icon icon;
-  void Function()? onTap;
-  ProfileCard({
+  final String title;
+  final Icon icon;
+  final void Function()? onTap;
+  const ProfileCard({
     super.key,
     required this.title,
     required this.icon,

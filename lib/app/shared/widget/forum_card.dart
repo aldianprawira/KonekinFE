@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:konekin/app/shared/theme/color.dart';
+
+import '../theme/color.dart';
 
 class ForumCard extends StatelessWidget {
-  String title;
-  String image;
-  void Function()? onTap;
-  ForumCard({
+  final String title;
+  final String image;
+  final void Function()? onTap;
+  const ForumCard({
     super.key,
     required this.title,
     required this.image,

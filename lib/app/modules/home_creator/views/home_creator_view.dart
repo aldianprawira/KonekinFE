@@ -23,29 +23,39 @@ class HomeCreatorView extends GetView<HomeCreatorController> {
             return const Center(child: CircularProgressIndicator());
           }
           List<QueryDocumentSnapshot<Map<String, dynamic>>> listAllDocs = snapshot.data!.docs;
-          print(listAllDocs);
           if (listAllDocs.isNotEmpty) {
-            return SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-              child: SizedBox(
-                height: Get.height,
-                child: ListView.builder(
-                  itemCount: listAllDocs.length,
-                  itemBuilder: (context, index) {
-                    Map<String, dynamic> data = listAllDocs[index].data();
-                    return SecondaryCard(
-                      image: data["Thumbnail"],
-                      title: data["Title"],
-                      creator: data["Creator"],
-                      price: data["Price"],
-                      bestSeller: true,
-                    );
-                  },
+            return RefreshIndicator(
+              onRefresh: () => controller.getData(),
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: Get.height,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: listAllDocs.length,
+                        itemBuilder: (context, index) {
+                          Map<String, dynamic> data = listAllDocs[index].data();
+                          return SecondaryCard(
+                            image: data["Thumbnail"],
+                            title: data["Title"],
+                            creator: data["Creator"],
+                            price: data["Price"],
+                            bestSeller: true,
+                            onTap: () => Get.toNamed(Routes.VIDEO_PLAYER, arguments: data),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ),
             );
           } else {
-            return const Center(child: Text("Data doesn't exist"));
+            return const Center(child: Text("Upload a video now with the + button at the bottom right"));
           }
         },
       ),

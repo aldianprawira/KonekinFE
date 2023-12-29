@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
+import '../../../shared/theme/color.dart';
+
 class VideoPlayerView extends StatefulWidget {
   const VideoPlayerView({super.key});
 
@@ -16,7 +18,12 @@ class _VideoPlayerViewState extends State<VideoPlayerView> {
   late YoutubeMetaData _videoMetaData;
   bool _isPlayerReady = false;
 
-  String videoURL = Get.arguments;
+  Map<String, dynamic> data = Get.arguments;
+  final String title = Get.arguments["Title"];
+  final String description = Get.arguments["Description"];
+  final String creator = Get.arguments["Creator"];
+  final bool bestSeller = true;
+  String videoURL = Get.arguments["VideoURL"];
 
   @override
   void initState() {
@@ -100,24 +107,60 @@ class _VideoPlayerViewState extends State<VideoPlayerView> {
         appBar: AppBar(
           title: const Text("Video Player"),
         ),
-        body: ListView(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             player,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(height: 16),
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 24,
+                    ),
+                  ),
                   const SizedBox(height: 8),
-                  Text(_videoMetaData.title),
+                  Text(
+                    description,
+                    style: TextStyle(
+                      color: grey,
+                      fontSize: 16,
+                    ),
+                  ),
                   const SizedBox(height: 8),
-                  Text(_videoMetaData.author),
+                  bestSeller == true
+                      ? Container(
+                          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                          decoration: BoxDecoration(
+                            color: Colors.lime[300],
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: const Text(
+                            "Bestseller",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        )
+                      : const SizedBox(),
                   const SizedBox(height: 8),
-                  Text(_videoMetaData.videoId),
-                  const SizedBox(height: 8),
-                  Text("Playback Quality: ${_controller.value.playbackQuality ?? ''}"),
-                  const SizedBox(height: 8),
-                  Text("Playback Rate: ${_controller.value.playbackRate}x"),
+                  RichText(
+                    text: TextSpan(
+                      text: "Created by ",
+                      style: TextStyle(color: black),
+                      children: [
+                        TextSpan(
+                          text: creator,
+                          style: TextStyle(color: primary, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

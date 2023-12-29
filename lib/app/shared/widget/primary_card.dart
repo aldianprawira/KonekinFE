@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:konekin/app/shared/theme/color.dart';
+
+import '../theme/color.dart';
 
 class PrimaryCard extends StatelessWidget {
-  String image;
-  String title;
-  String creator;
-  String price;
-  bool bestSeller;
-  void Function()? onTap;
-  PrimaryCard({
+  final String image;
+  final String title;
+  final String creator;
+  final String price;
+  final bool bestSeller;
+  final void Function()? onTap;
+  const PrimaryCard({
     super.key,
     required this.image,
     required this.title,

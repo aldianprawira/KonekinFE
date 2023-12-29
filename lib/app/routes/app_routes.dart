@@ -20,7 +20,6 @@ abstract class Routes {
   static const UPLOAD_VIDEO = _Paths.UPLOAD_VIDEO;
   static const EDIT_PROFILE_CREATOR = _Paths.EDIT_PROFILE_CREATOR;
   static const VIDEO_OVERVIEW = _Paths.VIDEO_OVERVIEW;
-  static const VIDEO_PLAYER_UI = _Paths.VIDEO_PLAYER_UI;
   static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
   static const REGISTER_CREATOR = _Paths.REGISTER_CREATOR;
   static const VIDEO_PLAYER = _Paths.VIDEO_PLAYER;
@@ -48,7 +47,6 @@ abstract class _Paths {
   static const UPLOAD_VIDEO = '/upload-video';
   static const EDIT_PROFILE_CREATOR = '/edit-profile-creator';
   static const VIDEO_OVERVIEW = '/video-overview';
-  static const VIDEO_PLAYER_UI = '/video-player-ui';
   static const CHANGE_PASSWORD = '/change-password';
   static const REGISTER_CREATOR = '/register-creator';
   static const VIDEO_PLAYER = '/video-player';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:konekin/app/shared/theme/color.dart';
+
+import '../theme/color.dart';
 
 class LogoKonekin extends StatelessWidget {
   const LogoKonekin({super.key});

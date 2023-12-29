@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:konekin/app/routes/app_pages.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../../shared/theme/color.dart';
 import '../controllers/video_overview_controller.dart';
 
 class VideoOverviewView extends GetView<VideoOverviewController> {
+  final Map<String, dynamic> data = Get.arguments;
+  final String title = Get.arguments["Title"];
+  final String image = Get.arguments["Thumbnail"];
+  final String description = Get.arguments["Description"];
+  final String creator = Get.arguments["Creator"];
+  final String price = Get.arguments["Price"];
+  final bool bestSeller = true;
   VideoOverviewView({Key? key}) : super(key: key);
-  String image = Get.arguments["Thumbnail"];
-  String title = Get.arguments["Title"];
-  String description = Get.arguments["Description"];
-  String creator = Get.arguments["Creator"];
-  String price = Get.arguments["Price"];
-  bool bestSeller = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,14 +89,14 @@ class VideoOverviewView extends GetView<VideoOverviewController> {
             SizedBox(
               width: Get.width,
               child: ElevatedButton(
-                onPressed: () => Get.toNamed(Routes.VIDEO_PLAYER, arguments: Get.arguments["VideoURL"]),
+                onPressed: () => Get.toNamed(Routes.PAYMENT_DETAIL, arguments: data),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 ),
                 child: const Text(
                   "Buy now",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 20),
                 ),
               ),
             ),

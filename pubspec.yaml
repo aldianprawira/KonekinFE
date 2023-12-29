@@ -1,16 +1,15 @@
-name: konekin
+name: Konekin
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
-  sdk: '>=3.1.2 <4.0.0'
+environment:
+  sdk: ">=3.1.2 <4.0.0"
 
-dependencies: 
+dependencies:
   cupertino_icons: ^1.0.2
   get: 4.6.6
   carousel_slider: 4.2.1
   url_launcher: 6.2.1
-  appinio_video_player: 1.2.2
   firebase_core: 2.24.0
   firebase_auth: 4.14.1
   cloud_firestore: 4.13.3
@@ -19,18 +18,38 @@ dependencies:
   youtube_player_flutter: 8.1.2
   dropdown_search: 5.0.6
   flutter_svg: 2.0.9
-  flutter: 
+  lottie: 2.7.0
+  flutter_launcher_icons: 0.13.1
+  flutter:
     sdk: flutter
 
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: ^2.0.0
-  flutter_test: 
+  flutter_test:
     sdk: flutter
 
-flutter: 
-  assets: 
+flutter:
+  assets:
     - assets/images/
     - assets/svg/
     - assets/icon/
+    - assets/lottie/
   uses-material-design: true
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "assets/images/konekin.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: false
+    image_path: "path/to/image.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: false
+    image_path: "path/to/image.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: false
+    image_path: "path/to/image.png"

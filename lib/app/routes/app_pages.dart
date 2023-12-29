@@ -1,12 +1,5 @@
 import 'package:get/get.dart';
 
-import 'package:konekin/app/modules/payment_detail/bindings/payment_detail_binding.dart';
-import 'package:konekin/app/modules/payment_detail/views/payment_detail_view.dart';
-import 'package:konekin/app/modules/transaction_detail/bindings/transaction_detail_binding.dart';
-import 'package:konekin/app/modules/transaction_detail/views/transaction_detail_view.dart';
-import 'package:konekin/app/modules/transaction_done/bindings/transaction_done_binding.dart';
-import 'package:konekin/app/modules/transaction_done/views/transaction_done_view.dart';
-
 import '../modules/change_password/bindings/change_password_binding.dart';
 import '../modules/change_password/views/change_password_view.dart';
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
@@ -27,6 +20,8 @@ import '../modules/navbar/bindings/navbar_binding.dart';
 import '../modules/navbar/views/navbar_view.dart';
 import '../modules/navbar_creator/bindings/navbar_creator_binding.dart';
 import '../modules/navbar_creator/views/navbar_creator_view.dart';
+import '../modules/payment_detail/bindings/payment_detail_binding.dart';
+import '../modules/payment_detail/views/payment_detail_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/profile_creator/bindings/profile_creator_binding.dart';
@@ -39,14 +34,16 @@ import '../modules/reset_password/bindings/reset_password_binding.dart';
 import '../modules/reset_password/views/reset_password_view.dart';
 import '../modules/splashscreen/bindings/splashscreen_binding.dart';
 import '../modules/splashscreen/views/splashscreen_view.dart';
+import '../modules/transaction_detail/bindings/transaction_detail_binding.dart';
+import '../modules/transaction_detail/views/transaction_detail_view.dart';
+import '../modules/transaction_done/bindings/transaction_done_binding.dart';
+import '../modules/transaction_done/views/transaction_done_view.dart';
 import '../modules/upload_video/bindings/upload_video_binding.dart';
 import '../modules/upload_video/views/upload_video_view.dart';
 import '../modules/video_overview/bindings/video_overview_binding.dart';
 import '../modules/video_overview/views/video_overview_view.dart';
 import '../modules/video_player/bindings/video_player_binding.dart';
 import '../modules/video_player/views/video_player_view.dart';
-import '../modules/video_player_ui/bindings/video_player_ui_binding.dart';
-import '../modules/video_player_ui/views/video_player_ui_view.dart';
 
 part 'app_routes.dart';
 
@@ -135,11 +132,6 @@ class AppPages {
       name: _Paths.VIDEO_OVERVIEW,
       page: () => VideoOverviewView(),
       binding: VideoOverviewBinding(),
-    ),
-    GetPage(
-      name: _Paths.VIDEO_PLAYER_UI,
-      page: () => const VideoPlayerUiView(),
-      binding: VideoPlayerUiBinding(),
     ),
     GetPage(
       name: _Paths.CHANGE_PASSWORD,

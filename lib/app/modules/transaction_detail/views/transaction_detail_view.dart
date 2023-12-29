@@ -1,231 +1,89 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
 import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
+import '../../../shared/theme/color.dart';
+import '../../../shared/widget/payment_card.dart';
 import '../controllers/transaction_detail_controller.dart';
 
 class TransactionDetailView extends GetView<TransactionDetailController> {
-  const TransactionDetailView({super.key});
-
+  final Map<String, dynamic> data = Get.arguments;
+  final String videoID = Get.arguments["VideoID"];
+  TransactionDetailView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Transaction Detail'),
+        title: const Text('Payment Method'),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
-              child: Text(
-                "Payment Method",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-            const SizedBox(height: 20),
             const Text(
-              "Transfer Virtual Account",
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              "Virtual Account Transfer",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffDADADA),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              height: 60,
-              width: Get.width,
-              child: Row(
-                children: [
-                  Image.asset(
-                    "assets/icon/mandiri.png",
-                    width: 50,
-                    height: 50,
-                  ),
-                  const Text(
-                    "Bank Mandiri",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 60),
-                    child: Text("102000998086", style: TextStyle(fontSize: 15)),
-                  ),
-                ],
-              ),
+            const SizedBox(height: 8),
+            const PaymentCard(
+              image: "assets/icon/mandiri.png",
+              bankName: "Bank Mandiri",
+              bankAccountNumber: "102000998086",
             ),
-            const SizedBox(height: 10),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffDADADA),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              height: 60,
-              width: Get.width,
-              child: Row(
-                children: [
-                  Image.asset(
-                    "assets/icon/bca.png",
-                    width: 50,
-                    height: 50,
-                  ),
-                  const Text(
-                    "Bank BCA",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 90),
-                    child: Text("102000998086", style: TextStyle(fontSize: 15)),
-                  ),
-                ],
-              ),
+            const SizedBox(height: 8),
+            const PaymentCard(
+              image: "assets/icon/bca.png",
+              bankName: "Bank BCA",
+              bankAccountNumber: "102000998086",
             ),
-            const SizedBox(height: 10),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffDADADA),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              height: 60,
-              width: Get.width,
-              child: Row(
-                children: [
-                  Image.asset(
-                    "assets/icon/bsi.png",
-                    width: 50,
-                    height: 50,
-                  ),
-                  const Text(
-                    "Bank BSI",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 95),
-                    child: Text("102000998086", style: TextStyle(fontSize: 15)),
-                  ),
-                ],
-              ),
+            const SizedBox(height: 8),
+            const PaymentCard(
+              image: "assets/icon/bsi.png",
+              bankName: "Bank BSI",
+              bankAccountNumber: "102000998086",
             ),
-            const SizedBox(height: 10),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffDADADA),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              height: 60,
-              width: Get.width,
-              child: Row(
-                children: [
-                  Image.asset(
-                    "assets/icon/bni.png",
-                    width: 50,
-                    height: 50,
-                  ),
-                  const Text(
-                    "Bank BNI",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 90),
-                    child: Text("102000998086", style: TextStyle(fontSize: 15)),
-                  ),
-                ],
-              ),
+            const SizedBox(height: 8),
+            const PaymentCard(
+              image: "assets/icon/bni.png",
+              bankName: "Bank BNI",
+              bankAccountNumber: "102000998086",
             ),
-            const SizedBox(height: 20),
-            const Text("Transfer Dompet Digital",
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 10),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffDADADA),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              height: 60,
-              width: Get.width,
-              child: Row(
-                children: [
-                  Image.asset(
-                    "assets/icon/dana.png",
-                    width: 50,
-                    height: 50,
-                  ),
-                  const Text(
-                    "Dana",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 130),
-                    child: Text("082269850831", style: TextStyle(fontSize: 15)),
-                  ),
-                ],
-              ),
+            const SizedBox(height: 24),
+            const Text(
+              "Digital Wallet Transfer",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffDADADA),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              height: 60,
-              width: Get.width,
-              child: Row(
-                children: [
-                  Image.asset(
-                    "assets/icon/ovo.png",
-                    width: 50,
-                    height: 50,
-                  ),
-                  const Text(
-                    "OVO",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 130),
-                    child: Text("082269850831", style: TextStyle(fontSize: 15)),
-                  ),
-                ],
-              ),
+            const SizedBox(height: 8),
+            const PaymentCard(
+              image: "assets/icon/dana.png",
+              bankName: "Dana",
+              bankAccountNumber: "081398844808",
             ),
-            const SizedBox(height: 10),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xffDADADA),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              height: 60,
-              width: Get.width,
-              child: Row(
-                children: [
-                  Image.asset(
-                    "assets/icon/gopay.png",
-                    width: 50,
-                    height: 50,
-                  ),
-                  const Text(
-                    "Gopay",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 110),
-                    child: Text("082269850831", style: TextStyle(fontSize: 15)),
-                  ),
-                ],
-              ),
+            const SizedBox(height: 8),
+            const PaymentCard(
+              image: "assets/icon/ovo.png",
+              bankName: "OVO",
+              bankAccountNumber: "081398844808",
             ),
-            const SizedBox(height: 10),
-            //konfirmasi telah membayar dengan checkbox
+            const SizedBox(height: 8),
+            const PaymentCard(
+              image: "assets/icon/gopay.png",
+              bankName: "Gopay",
+              bankAccountNumber: "081398844808",
+            ),
+            const SizedBox(height: 8),
             Row(
               children: [
-                Checkbox(
-                  value: false,
-                  onChanged: (bool? value) {},
+                Obx(
+                  () => Checkbox(
+                    value: controller.isPaid.value,
+                    onChanged: (value) => controller.isPaid.value = value!,
+                    activeColor: primary,
+                  ),
                 ),
-                const Text("Saya telah membayar"),
+                const Text("I have paid"),
               ],
             ),
             Expanded(
@@ -233,10 +91,39 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(
                   width: Get.width,
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: () => Get.toNamed(Routes.TRANSACTION_DONE),
-                    child: const Text("Lanjutkan Pembayaran"),
+                  child: Obx(
+                    () => ElevatedButton(
+                      onPressed: () {
+                        if (controller.isPaid.isTrue) {
+                          controller.makeTransaction(videoID);
+                          Get.toNamed(Routes.TRANSACTION_DONE, arguments: data);
+                        } else {
+                          Get.defaultDialog(
+                            title: "Checkbox",
+                            middleText: "Please tick the checkbox!",
+                            textConfirm: "Okay",
+                            onConfirm: () {
+                              Get.back();
+                            },
+                            buttonColor: primary,
+                            confirmTextColor: white,
+                          );
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        backgroundColor: controller.isLoading.isFalse ? primary : Colors.grey,
+                      ),
+                      child: controller.isLoading.isFalse
+                          ? const Text(
+                              "Continue Payment",
+                              style: TextStyle(fontSize: 20),
+                            )
+                          : const Text(
+                              "Loding...",
+                              style: TextStyle(fontSize: 20),
+                            ),
+                    ),
                   ),
                 ),
               ),

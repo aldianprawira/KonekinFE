@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:konekin/app/shared/theme/color.dart';
+
+import 'color.dart';
 
 ThemeData theme = ThemeData(
   scaffoldBackgroundColor: white,
