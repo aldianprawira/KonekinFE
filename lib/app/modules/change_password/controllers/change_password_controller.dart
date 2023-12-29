@@ -12,25 +12,31 @@ class ChangePasswordController extends GetxController {
   RxBool isHidden3 = true.obs;
   RxBool isLoading = false.obs;
 
+  // pembuatan controller untuk textfield
   TextEditingController currentPassC = TextEditingController();
   TextEditingController newPassC = TextEditingController();
   TextEditingController newPassValidationC = TextEditingController();
 
+  // untuk validasi password
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void changePassword() async {
     try {
+      // cek apakah password baru dan konfirmasi password sama
       isLoading.value = true;
       String email = auth.currentUser!.email!;
-      await auth.signInWithEmailAndPassword(email: email, password: currentPassC.text);
+      await auth.signInWithEmailAndPassword(
+          email: email, password: currentPassC.text);
       await auth.currentUser!.updatePassword(newPassC.text);
       Get.back();
-      Get.snackbar("Succeed", "Successfully changed password", backgroundColor: white);
+      Get.snackbar("Succeed", "Successfully changed password",
+          backgroundColor: white);
       // await auth.signOut();
       // await auth.signInWithEmailAndPassword(email: email, password: newPassC.text);
       // Get.offAllNamed(Routes.NAVBAR);
     } on FirebaseAuthException catch (e) {
       print(e.code);
+      //TODO: Cek lagi untuk e.code 'user-not-found'
       if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
         Get.defaultDialog(
@@ -54,6 +60,7 @@ class ChangePasswordController extends GetxController {
           confirmTextColor: white,
         );
       } else if (e.code == 'weak-password') {
+        //TODO: Cek lagi untuk e.code 'weak-password'
         print('The password provided is too weak.');
         Get.defaultDialog(
           title: "Weak password",
@@ -65,6 +72,7 @@ class ChangePasswordController extends GetxController {
         );
       }
     } catch (e) {
+      //TODO: Cek lagi untuk e.code 'user-not-found'
       Get.defaultDialog(
         title: "Something when wrong",
         middleText: "Unable to change password",

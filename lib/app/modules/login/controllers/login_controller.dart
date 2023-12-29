@@ -11,6 +11,7 @@ class LoginController extends GetxController {
   RxBool isHiddenPw = true.obs;
   RxBool isLoading = false.obs;
 
+//  pembuatan controller untuk textfield
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController passCtrl = TextEditingController();
 

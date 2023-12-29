@@ -4,6 +4,13 @@ import 'package:get/get.dart';
 
 import '../../../shared/theme/color.dart';
 
+// ResetPasswordController adalah kelas GetX controller yang menangani logika reset password.
+// Controller ini menggunakan GlobalKey<FormState> untuk validasi formulir, RxBool isLoading untuk melacak status loading, dan TextEditingController untuk menangani input alamat email.
+// Metode resetPassword memeriksa apakah alamat email valid, kemudian mencoba mengirim email reset password melalui instance FirebaseAuth.
+// Jika berhasil, controller menampilkan dialog konfirmasi dengan informasi bahwa tautan reset password telah dikirim ke alamat email yang bersangkutan, dan menawarkan opsi untuk kembali ke halaman login.
+// Pada kasus kegagalan, controller menangani error dengan menampilkan dialog informasi bahwa reset password gagal.
+// Keseluruhan proses berjalan dalam blok try-catch-finally, dan validasi alamat email dilakukan menggunakan GetUtils.isEmail dari GetX.
+
 class ResetPasswordController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 

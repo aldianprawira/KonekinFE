@@ -15,6 +15,11 @@ class RegisterCreatorController extends GetxController {
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
+// RegisterCreatorController adalah kelas controller GetX yang bertanggung jawab untuk menangani proses registrasi akun creator.
+// Ini menggunakan GlobalKey<FormState> untuk validasi formulir, RxBool isLoading untuk melacak status loading, dan instances TextEditingController untuk menangani input.
+// Metode registerCreator mengambil ID pengguna sebagai parameter, mengumpulkan data dari input, dan mencoba memperbarui dokumen pengguna di Firestore dengan informasi yang diberikan.
+// Keberhasilan memicu notifikasi snackbar dan navigasi ke navbar creator, sedangkan kegagalan menampilkan dialog kesalahan.
+
   void registerCreator(String uid) async {
     Map<String, dynamic> data = {
       "BankName": bankNameC.text,
@@ -24,7 +29,8 @@ class RegisterCreatorController extends GetxController {
     try {
       isLoading.value = true;
       await firestore.collection("users").doc(uid).update(data);
-      Get.snackbar("Succeed", "Successfully created a creator account.", backgroundColor: white);
+      Get.snackbar("Succeed", "Successfully created a creator account.",
+          backgroundColor: white);
       Get.offAllNamed(Routes.NAVBAR_CREATOR);
     } catch (e) {
       Get.defaultDialog(

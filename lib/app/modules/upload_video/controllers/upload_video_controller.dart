@@ -23,7 +23,8 @@ class UploadVideoController extends GetxController {
 
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
-  firebase_storage.FirebaseStorage storage = firebase_storage.FirebaseStorage.instance;
+  firebase_storage.FirebaseStorage storage =
+      firebase_storage.FirebaseStorage.instance;
   ImagePicker picker = ImagePicker();
 
   void pickImage() async {
@@ -56,11 +57,14 @@ class UploadVideoController extends GetxController {
         File file = File(image!.path);
         String fileExtension = image!.name.split(".").last;
         await storage.ref("${titleCtrl.text}.$fileExtension").putFile(file);
-        String urlImage = await storage.ref("${titleCtrl.text}.$fileExtension").getDownloadURL();
+        String urlImage = await storage
+            .ref("${titleCtrl.text}.$fileExtension")
+            .getDownloadURL();
         data.addAll({"Thumbnail": urlImage});
         await firestore.collection("videos").add(data);
         Get.back();
-        Get.snackbar("Succeed", "Successfully uploaded video.", backgroundColor: white);
+        Get.snackbar("Succeed", "Successfully uploaded video.",
+            backgroundColor: white);
         //jika gagal upload, maka akan muncul dialog
       } catch (e) {
         print(e);
@@ -76,6 +80,7 @@ class UploadVideoController extends GetxController {
         isLoading.value = false;
       }
     } else {
+      // jika tidak ada gambar yang dipilih, maka akan muncul dialog
       Get.defaultDialog(
         title: "Something when wrong",
         middleText: "Image must be selected.",
