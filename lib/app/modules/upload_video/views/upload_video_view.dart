@@ -196,7 +196,7 @@ class UploadVideoView extends GetView<UploadVideoController> {
                                     ),
                                   )
                                 : const Text(
-                                    "Loding...",
+                                    "Loading...",
                                     style: TextStyle(
                                       fontSize: 20,
                                     ),

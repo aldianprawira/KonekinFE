@@ -81,7 +81,7 @@ class EditProfileCreatorView extends GetView<EditProfileCreatorController> {
                             ),
                           )
                         : const Text(
-                            "Loding...",
+                            "Loading...",
                             style: TextStyle(
                               fontSize: 20,
                             ),

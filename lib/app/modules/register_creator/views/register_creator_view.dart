@@ -81,7 +81,7 @@ class RegisterCreatorView extends GetView<RegisterCreatorController> {
                             ),
                           )
                         : const Text(
-                            "Loding...",
+                            "Loading...",
                             style: TextStyle(
                               fontSize: 20,
                             ),

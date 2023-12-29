@@ -26,9 +26,9 @@ class HomeView extends GetView<HomeController> {
           List<QueryDocumentSnapshot<Map<String, dynamic>>> listAllDocs = snapshot.data!.docs;
           if (listAllDocs.isNotEmpty) {
             return RefreshIndicator(
-              onRefresh: () => controller.getData(),
+              onRefresh: () async => await controller.getData(),
               child: SingleChildScrollView(
-                // physics: const AlwaysScrollableScrollPhysics(),
+                physics: const AlwaysScrollableScrollPhysics(),
                 padding: const EdgeInsets.only(left: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

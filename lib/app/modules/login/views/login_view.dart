@@ -124,7 +124,7 @@ class LoginView extends GetView<LoginController> {
                                 ),
                               )
                             : const Text(
-                                "Loding...",
+                                "Loading...",
                                 style: TextStyle(
                                   fontSize: 20,
                                 ),

@@ -82,7 +82,7 @@ class ResetPasswordView extends GetView<ResetPasswordController> {
                                 ),
                               )
                             : const Text(
-                                "Loding...",
+                                "Loading...",
                                 style: TextStyle(
                                   fontSize: 20,
                                 ),

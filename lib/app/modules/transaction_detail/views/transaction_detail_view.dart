@@ -120,7 +120,7 @@ class TransactionDetailView extends GetView<TransactionDetailController> {
                               style: TextStyle(fontSize: 20),
                             )
                           : const Text(
-                              "Loding...",
+                              "Loading...",
                               style: TextStyle(fontSize: 20),
                             ),
                     ),

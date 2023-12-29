@@ -129,7 +129,7 @@ class ChangePasswordView extends GetView<ChangePasswordController> {
                             ),
                           )
                         : const Text(
-                            "Loding...",
+                            "Loading...",
                             style: TextStyle(
                               fontSize: 20,
                             ),
